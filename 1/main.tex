@@ -32,6 +32,258 @@ Determine whether the following sets are subspaces of $\mathbb{R}^3$ under the o
 Describe $W_1 \cap W_3, W_1 \cap W_4$ and $W_3 \cap W_4$, and observe that each is a subspace of $\mathbb{R}^3$. \\
 
 \textbf{Solution:}
+
+By definition of a subspace, a non-empty subset $W \subseteq \mathbb{R}^n$ is a subspace if and only if:
+\begin{enumerate}
+    \item The zero vector $\mathbf{0}$ is in $W$.
+    \item $W$ is closed under addition: if $\mathbf{u}, \mathbf{v} \in W$, then $\mathbf{u} + \mathbf{v} \in W$.
+    \item $W$ is closed under scalar multiplication: if $\mathbf{u} \in W$ and $\alpha \in \mathbb{R}$, then $\alpha \mathbf{u} \in W$.
+\end{enumerate}
+
+\bigskip
+
+\noindent
+\textbf{(a)} $W_1 = \{(a_1,a_2,a_3) \in \mathbb{R}^3 : a_1 = 3a_2,\, a_3 = -a_2\}$. \\
+\noindent
+Any vector in $W_1$ can be written as
+\[
+(a_1, a_2, a_3) = (3a_2,\, a_2,\, -a_2).
+\]
+Let $t = a_2$. Then every vector in $W_1$ has the form
+\[
+(3t,\, t,\, -t) = t\,(3, 1, -1).
+\]
+meaning we can write $W_1$ as
+\[
+W_1 = \{t(3,1,-1) : t \in \mathbb{R}\}.
+\]
+Now we check the three conditions for $W_1$ to be a subspace:
+\begin{itemize}
+    \item The zero vector $(0,0,0)$ is in $W_1$, because when $t = 0$, we have $0(3,1,-1) = (0,0,0)$.
+    \item $W_1$ is closed under addition because for any two vectors $\mathbf{v}_1 = (3a_2,a_2,-a_2) \in W_1$ and $\mathbf{v}_2 = (3b_2,b_2,-b_2) \in W_1$, we have
+\begin{align*}
+\mathbf{v}_1 + \mathbf{v}_2 &= (3a_2,a_2,-a_2) + (3b_2,b_2,-b_2) \\
+                              &= (3(a_2+b_2),(a_2+b_2),-(a_2+b_2)) \\
+                              &= (a_2 + b_2)(3,1,-1) \in W_1.
+\end{align*}
+    \item $W_1$ is closed under scalar multiplication because for any vector $\mathbf{v} = (3a_2,a_2,-a_2) \in W_1$ and any scalar $c \in \mathbb{R}$, we have
+\begin{align*}
+c\mathbf{v} &= c(3a_2,a_2,-a_2) \\
+            &= (3ca_2,ca_2,-ca_2) \\
+            &= t(3c,c,-c) \\
+            &= tc(3,1,-1) \in W_1.
+\end{align*}
+\end{itemize}
+Thus $W_1$ satisfies all three conditions for being a subspace of $\mathbb{R}^3$. Therefore
+\[
+\boxed{W_1 \text{ is a subspace of } \mathbb{R}^3.}
+\]
+
+\bigskip
+
+\noindent
+\textbf{(b)} $W_2 = \{(a_1,a_2,a_3) \in \mathbb{R}^3 : a_1 = a_3 + 2\}$.\\
+\noindent
+Check if the zero vector $(0,0,0)$ is in $W_2$. If $(0,0,0)$ were in $W_2$, we would need
+\[
+a_1 = 0, \quad a_3 = 0 \quad \Longrightarrow \quad 0 = 0 + 2,
+\]
+which is false since that implies $0=2$. Therefore $(0,0,0) \notin W_2$. Since a subspace must contain the zero vector, 
+\[
+\boxed{W_2 \text{ is not a subspace of } \mathbb{R}^3.}
+\]
+
+\bigskip
+
+\noindent
+\textbf{(c)} $W_3 = \{(a_1,a_2,a_3) \in \mathbb{R}^3 : 2a_1 - 7a_2 + a_3 = 0\}$.
+
+\begin{itemize}
+\item Check that $\mathbf{0} = (0,0,0)$ can be satisfied when $a_1 = a_2 = a_3 = 0$:
+\[
+2\cdot 0 - 7\cdot 0 + 0 = 0.
+\]
+Hence $\mathbf{0} \in W_3$.
+
+\item Check if $W_3$ is closed under addition. Let $\mathbf{u} = (a_1,a_2,a_3) \in W_3$ and $\mathbf{v} = (b_1,b_2,b_3) \in W_3$. Then
+\[
+\left\{\begin{aligned}
+2a_1 - 7a_2 + a_3 &= 0, \\
+2b_1 - 7b_2 + b_3 &= 0.
+\end{aligned}\right.
+\]
+Adding $\mathbf{u}$ and $\mathbf{v}$, we get
+\begin{align*}
+\mathbf{u} + \mathbf{v} &= (a_1 + b_1, a_2 + b_2, a_3 + b_3) \\
+&= (a_1, a_2, a_3) + (b_1, b_2, b_3) \\
+&= \mathbf{u} + \mathbf{v}.
+\end{align*}
+Hence $W_3$ is closed under addition.
+
+\item Check if $W_3$ is closed under scalar multiplication. Let $\mathbf{u} = (a_1,a_2,a_3) \in W_3$ and $\alpha \in \mathbb{R}$. Then
+\[
+2a_1 - 7a_2 + a_3 = 0.
+\]
+Multiplying this equation by $\alpha$, we get
+\[
+2\alpha a_1 - 7\alpha a_2 + \alpha a_3 = 0.
+\]
+\end{itemize}
+
+Therefore
+\[
+\boxed{W_3 \text{ is a subspace of } \mathbb{R}^3.}
+\]
+
+\bigskip
+
+\noindent
+\textbf{(d)} $W_4 = \{(a_1,a_2,a_3) \in \mathbb{R}^3 : a_1 - 4a_2 - a_3 = 0\}$.
+
+Again, this is given by a single homogeneous linear equation:
+\[
+a_1 - 4a_2 - a_3 = 0.
+\]
+Check the zero vector: $0 - 4\cdot0 - 0 = 0$, so $\mathbf{0}\in W_4$. By the same reasoning as before (it is the kernel of a linear functional), $W_4$ is closed under addition and scalar multiplication. Thus
+\[
+\boxed{W_4 \text{ is a subspace of } \mathbb{R}^3.}
+\]
+
+\bigskip
+
+\noindent
+\textbf{(e)} $W_5 = \{(a_1,a_2,a_3) \in \mathbb{R}^3 : a_1 + 2a_2 - 3a_3 = 1\}$.
+
+Check the zero vector:
+\[
+0 + 2\cdot0 - 3\cdot0 = 0 \neq 1,
+\]
+so $\mathbf{0}\notin W_5$. Hence $W_5$ is not a subspace. In fact, $W_5$ is an \emph{affine plane} that does not pass through the origin. Therefore
+\[
+\boxed{W_5 \text{ is not a subspace of } \mathbb{R}^3.}
+\]
+
+\bigskip
+
+\noindent
+\textbf{Conclusion on subspaces:}
+\[
+W_1, W_3, \text{ and } W_4 \text{ are subspaces}; \quad W_2 \text{ and } W_5 \text{ are not subspaces.}
+\]
+
+\bigskip
+
+\noindent
+\textbf{Intersections:} We next describe $W_1\cap W_3$, $W_1\cap W_4$, and $W_3\cap W_4$. Note that the intersection of subspaces is always a subspace as well.
+
+\medskip
+\noindent
+\underline{$W_1 \cap W_3$:}
+
+\[
+W_1 = \{(3t,\, t,\, -t)\,:\, t\in \mathbb{R}\}, 
+\quad
+W_3 = \{(a_1,a_2,a_3)\,:\, 2a_1 -7a_2 + a_3 = 0\}.
+\]
+A vector in $W_1 \cap W_3$ must be of the form $(3t, t, -t)$ and also satisfy
+\[
+2(3t) - 7t + (-t) = 0
+\quad \Longrightarrow \quad 6t - 7t - t = -2t = 0
+\quad \Longrightarrow \quad t=0.
+\]
+Hence the only vector in $W_1 \cap W_3$ is $(0,0,0)$. Therefore
+\[
+\boxed{W_1 \cap W_3 = \{\mathbf{0}\}.}
+\]
+
+\medskip
+\noindent
+\underline{$W_1 \cap W_4$:}
+
+\[
+W_1 = \{(3t,\, t,\, -t)\,:\, t\in \mathbb{R}\}, 
+\quad
+W_4 = \{(a_1,a_2,a_3)\,:\, a_1 -4a_2 - a_3 = 0\}.
+\]
+We require $(3t, t, -t)$ to satisfy
+\[
+(3t) - 4t - (-t) = 3t - 4t + t = 0.
+\]
+This simplifies to $0=0$ for all $t$. Hence \emph{every} vector in $W_1$ also lies in $W_4$. Therefore
+\[
+\boxed{W_1 \cap W_4 = W_1 = \{(3t, t, -t) : t \in \mathbb{R}\}.}
+\]
+
+\medskip
+\noindent
+\underline{$W_3 \cap W_4$:}
+
+These are the planes
+\[
+W_3 = \{(a_1,a_2,a_3) : 2a_1 - 7a_2 + a_3 = 0\}, 
+\quad
+W_4 = \{(a_1,a_2,a_3) : a_1 - 4a_2 - a_3 = 0\}.
+\]
+We want the common solutions to the system
+\[
+\begin{cases}
+2a_1 - 7a_2 + a_3 = 0,\\
+a_1 - 4a_2 - a_3 = 0.
+\end{cases}
+\]
+We can solve this system as follows. From the second equation,
+\[
+a_3 = a_1 - 4a_2.
+\]
+Substitute $a_3$ into the first:
+\[
+2a_1 - 7a_2 + (a_1 - 4a_2) = 0 
+\quad \Longrightarrow \quad 3a_1 - 11a_2 = 0 
+\quad \Longrightarrow \quad 3a_1 = 11a_2.
+\]
+Thus $a_1 = \tfrac{11}{3}\,a_2$. Then
+\[
+a_3 = a_1 - 4a_2 = \frac{11}{3}a_2 \;-\; 4a_2 
+= \frac{11}{3}a_2 - \frac{12}{3}a_2 
+= -\frac{1}{3}a_2.
+\]
+Hence any vector in $W_3 \cap W_4$ has the form
+\[
+\left(\tfrac{11}{3}a_2,\; a_2,\; -\tfrac{1}{3}a_2\right).
+\]
+Set $a_2 = 3s$ for convenience, to clear denominators. Then
+\[
+a_1 = \frac{11}{3}(3s) = 11s,\quad
+a_2 = 3s,\quad
+a_3 = -\frac{1}{3}(3s) = -s.
+\]
+Thus
+\[
+(a_1, a_2, a_3) = (11s,\,3s,\,-s) = s\,(11,\,3,\,-1).
+\]
+Hence
+\[
+\boxed{W_3 \cap W_4 = \{ s(11,3,-1) : s \in \mathbb{R}\},
+}
+\]
+which is a line through the origin in $\mathbb{R}^3$.
+
+\bigskip
+
+\noindent
+\textbf{Final summary:}
+\[
+\begin{aligned}
+&\bullet\; W_1,\,W_3,\,W_4 \text{ are subspaces.}
+\quad\bullet\; W_2,\,W_5 \text{ are not subspaces.} \\[6pt]
+&\bullet\; W_1 \cap W_3 = \{\mathbf{0}\}, 
+\quad 
+W_1 \cap W_4 = W_1, 
+\quad 
+W_3 \cap W_4 = \text{span}\{(11,\,3,\, -1)\}.
+\end{aligned}
+\]
+
 \newpage
 
 \section*{Exercise 2}
