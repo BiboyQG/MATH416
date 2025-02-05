@@ -112,13 +112,16 @@ Hence $\mathbf{0} \in W_3$.
 2b_1 - 7b_2 + b_3 &= 0.
 \end{aligned}\right.
 \]
-Adding $\mathbf{u}$ and $\mathbf{v}$, we get
+Adding these two equations, we get
+\[
+2(a_1 + b_1) - 7(a_2 + b_2) + (a_3 + b_3) = 0.
+\]
+Now, adding $\mathbf{u}$ and $\mathbf{v}$, we get
 \begin{align*}
-\mathbf{u} + \mathbf{v} &= (a_1 + b_1, a_2 + b_2, a_3 + b_3) \\
-&= (a_1, a_2, a_3) + (b_1, b_2, b_3) \\
-&= \mathbf{u} + \mathbf{v}.
+\mathbf{u} + \mathbf{v} &= (a_1, a_2, a_3) + (b_1, b_2, b_3) \\
+&= (a_1 + b_1, a_2 + b_2, a_3 + b_3)
 \end{align*}
-Hence $W_3$ is closed under addition.
+Since $2(a_1 + b_1) - 7(a_2 + b_2) + (a_3 + b_3) = 0$, we have $\mathbf{u} + \mathbf{v} \in W_3$. Hence $W_3$ is closed under addition.
 
 \item Check if $W_3$ is closed under scalar multiplication. Let $\mathbf{u} = (a_1,a_2,a_3) \in W_3$ and $\alpha \in \mathbb{R}$. Then
 \[
@@ -128,6 +131,12 @@ Multiplying this equation by $\alpha$, we get
 \[
 2\alpha a_1 - 7\alpha a_2 + \alpha a_3 = 0.
 \]
+Now, multiplying $\mathbf{u}$ by $\alpha$, we get
+\begin{align*}
+\alpha \mathbf{u} &= \alpha (a_1, a_2, a_3) \\
+&= (\alpha a_1, \alpha a_2, \alpha a_3)
+\end{align*}
+Since $2\alpha a_1 - 7\alpha a_2 + \alpha a_3 = 0$, we have $\alpha \mathbf{u} \in W_3$. Hence $W_3$ is closed under scalar multiplication.
 \end{itemize}
 
 Therefore
@@ -140,11 +149,48 @@ Therefore
 \noindent
 \textbf{(d)} $W_4 = \{(a_1,a_2,a_3) \in \mathbb{R}^3 : a_1 - 4a_2 - a_3 = 0\}$.
 
-Again, this is given by a single homogeneous linear equation:
+\begin{itemize}
+\item Check that $\mathbf{0} = (0,0,0)$ can be satisfied when $a_1 = a_2 = a_3 = 0$:
 \[
 a_1 - 4a_2 - a_3 = 0.
 \]
-Check the zero vector: $0 - 4\cdot0 - 0 = 0$, so $\mathbf{0}\in W_4$. By the same reasoning as before (it is the kernel of a linear functional), $W_4$ is closed under addition and scalar multiplication. Thus
+Hence $\mathbf{0} \in W_4$.
+
+\item Check if $W_4$ is closed under addition. Let $\mathbf{u} = (a_1,a_2,a_3) \in W_4$ and $\mathbf{v} = (b_1,b_2,b_3) \in W_4$. Then
+\[
+\left\{\begin{aligned}
+a_1 - 4a_2 - a_3 &= 0, \\
+b_1 - 4b_2 - b_3 &= 0.
+\end{aligned}\right.
+\]
+Adding these two equations, we get
+\[
+a_1 + b_1 - 4(a_2 + b_2) - (a_3 + b_3) = 0.
+\]
+Now, adding $\mathbf{u}$ and $\mathbf{v}$, we get
+\begin{align*}
+\mathbf{u} + \mathbf{v} &= (a_1, a_2, a_3) + (b_1, b_2, b_3) \\
+&= (a_1 + b_1, a_2 + b_2, a_3 + b_3)
+\end{align*}
+Since $a_1 + b_1 - 4(a_2 + b_2) - (a_3 + b_3) = 0$, we have $\mathbf{u} + \mathbf{v} \in W_4$. Hence $W_4$ is closed under addition.
+
+\item Check if $W_4$ is closed under scalar multiplication. Let $\mathbf{u} = (a_1,a_2,a_3) \in W_4$ and $\alpha \in \mathbb{R}$. Then
+\[
+a_1 - 4a_2 - a_3 = 0.
+\]
+Multiplying this equation by $\alpha$, we get
+\[
+\alpha a_1 - 4\alpha a_2 - \alpha a_3 = 0.
+\]
+Now, multiplying $\mathbf{u}$ by $\alpha$, we get
+\begin{align*}
+\alpha \mathbf{u} &= \alpha (a_1, a_2, a_3) \\
+&= (\alpha a_1, \alpha a_2, \alpha a_3)
+\end{align*}
+Since $\alpha a_1 - 4\alpha a_2 - \alpha a_3 = 0$, we have $\alpha \mathbf{u} \in W_4$. Hence $W_4$ is closed under scalar multiplication.
+\end{itemize}
+
+Therefore
 \[
 \boxed{W_4 \text{ is a subspace of } \mathbb{R}^3.}
 \]
@@ -158,7 +204,7 @@ Check the zero vector:
 \[
 0 + 2\cdot0 - 3\cdot0 = 0 \neq 1,
 \]
-so $\mathbf{0}\notin W_5$. Hence $W_5$ is not a subspace. In fact, $W_5$ is an \emph{affine plane} that does not pass through the origin. Therefore
+so $\mathbf{0}\notin W_5$. Hence $W_5$ is not a subspace. Therefore
 \[
 \boxed{W_5 \text{ is not a subspace of } \mathbb{R}^3.}
 \]
@@ -179,7 +225,6 @@ W_1, W_3, \text{ and } W_4 \text{ are subspaces}; \quad W_2 \text{ and } W_5 \te
 \medskip
 \noindent
 \underline{$W_1 \cap W_3$:}
-
 \[
 W_1 = \{(3t,\, t,\, -t)\,:\, t\in \mathbb{R}\}, 
 \quad
@@ -199,7 +244,6 @@ Hence the only vector in $W_1 \cap W_3$ is $(0,0,0)$. Therefore
 \medskip
 \noindent
 \underline{$W_1 \cap W_4$:}
-
 \[
 W_1 = \{(3t,\, t,\, -t)\,:\, t\in \mathbb{R}\}, 
 \quad
@@ -217,14 +261,11 @@ This simplifies to $0=0$ for all $t$. Hence \emph{every} vector in $W_1$ also li
 \medskip
 \noindent
 \underline{$W_3 \cap W_4$:}
-
-These are the planes
 \[
 W_3 = \{(a_1,a_2,a_3) : 2a_1 - 7a_2 + a_3 = 0\}, 
 \quad
 W_4 = \{(a_1,a_2,a_3) : a_1 - 4a_2 - a_3 = 0\}.
 \]
-We want the common solutions to the system
 \[
 \begin{cases}
 2a_1 - 7a_2 + a_3 = 0,\\
@@ -266,7 +307,6 @@ Hence
 \boxed{W_3 \cap W_4 = \{ s(11,3,-1) : s \in \mathbb{R}\},
 }
 \]
-which is a line through the origin in $\mathbb{R}^3$.
 
 \bigskip
 
@@ -280,7 +320,7 @@ which is a line through the origin in $\mathbb{R}^3$.
 \quad 
 W_1 \cap W_4 = W_1, 
 \quad 
-W_3 \cap W_4 = \text{span}\{(11,\,3,\, -1)\}.
+W_3 \cap W_4 = \text{span}\{s(11,\,3,\, -1): s \in \mathbb{R}\}.
 \end{aligned}
 \]
 
@@ -290,6 +330,64 @@ W_3 \cap W_4 = \text{span}\{(11,\,3,\, -1)\}.
 A square matrix $A$ is called upper triangular if all entries lying below the diagonal are 0, that is, $A_{ij} = 0$ whenever $i > j$. Show that the upper triangular matrices form a subspace of $\mathcal{M}_{n\times n}(\mathbb{R})$. \\
 
 \textbf{Solution:}
+
+To show that the upper triangular matrices form a subspace of $\mathcal{M}_{n\times n}(\mathbb{R})$, by definition, we need to show that they include zero matrix, are closed under addition, and are closed under scalar multiplication.
+
+\begin{itemize}
+\item The zero matrix is an upper triangular matrix. Check:
+\[
+\begin{pmatrix}
+0 & \cdots & 0 \\
+\vdots & \ddots & \vdots \\
+0 & \cdots & 0
+\end{pmatrix}
+\]
+\item If $A$ and $B$ are upper triangular matrices, then $A + B$ is also an upper triangular matrix. Check:
+Let $A$ and $B$ be upper triangular matrices:
+\[
+A = \begin{pmatrix}
+a_{11} & \cdots & a_{1n} \\
+\vdots & \ddots & \vdots \\
+0 & \cdots & a_{nn}
+\end{pmatrix}
+\]
+\[
+B = \begin{pmatrix}
+b_{11} & \cdots & b_{1n} \\
+\vdots & \ddots & \vdots \\
+0 & \cdots & b_{nn}
+\end{pmatrix}
+\]
+Then $A + B$ is also an upper triangular matrix of the form:
+\[
+\begin{pmatrix}
+a_{11} + b_{11} & \cdots & a_{1n} + b_{1n} \\
+\vdots & \ddots & \vdots \\
+0 & \cdots & a_{nn} + b_{nn}
+\end{pmatrix}
+\]
+\item If $A$ is an upper triangular matrix and $c$ is a scalar, then $cA$ is also an upper triangular matrix. Check:
+Let $A$ be an upper triangular matrix:
+\[
+A = \begin{pmatrix}
+a_{11} & \cdots & a_{1n} \\
+\vdots & \ddots & \vdots \\
+0 & \cdots & a_{nn}
+\end{pmatrix}
+\]
+Then $cA$ is also an upper triangular matrix of the form:
+\[
+\begin{pmatrix}
+ca_{11} & \cdots & ca_{1n} \\
+\vdots & \ddots & \vdots \\
+0 & \cdots & ca_{nn}
+\end{pmatrix}
+\]
+\end{itemize}
+
+Therefore, the upper triangular matrices form a subspace of $\mathcal{M}_{n\times n}(\mathbb{R})$.
+
+
 \newpage
 
 \section*{Exercise 3}
