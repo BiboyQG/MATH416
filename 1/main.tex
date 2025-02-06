@@ -602,4 +602,46 @@ Note: A relationship that satisfies these three properties is known as an equiva
 
 \textbf{Solution:}
 
+By definition, two matrices are row equivalent if one can be transformed into the other through a finite sequence of elementary row operations.
+
+\begin{enumerate}[label=(\alph*)]
+\item To prove $A$ is row equivalent to itself:
+    Consider the sequence of zero elementary row operations (empty sequence).
+    Applying this sequence to $A$ results in $A$ itself.
+    Therefore, $A$ is row equivalent to $A$.
+
+\item To prove if $A$ is row equivalent to $B$, then $B$ is row equivalent to $A$:
+    Given that $A$ is row equivalent to $B$, there exists a finite sequence of elementary row operations
+    $S = (s_1, s_2, ..., s_k)$ that transforms $A$ into $B$.
+    
+    For each elementary row operation $s_i$, there exists an inverse operation $s_i^{-1}$ such that:
+    \begin{itemize}
+        \item For row switching: switching back gives the original
+        \item For row multiplication: multiplying by reciprocal gives the original
+        \item For row addition: subtracting instead of adding gives the original
+    \end{itemize}
+    
+    Consider the sequence $S^{-1} = (s_k^{-1}, s_{k-1}^{-1}, ..., s_1^{-1})$.
+    Applying $S^{-1}$ to $B$ will transform it back to $A$.
+    Therefore, $B$ is row equivalent to $A$.
+
+\item To prove if $A$ is row equivalent to $B$ and $B$ is row equivalent to $C$, then $A$ is row equivalent to $C$:
+    Given:
+    \begin{itemize}
+        \item There exists a sequence $S_1 = (s_1, s_2, ..., s_k)$ that transforms $A$ into $B$
+        \item There exists a sequence $S_2 = (t_1, t_2, ..., t_m)$ that transforms $B$ into $C$
+    \end{itemize}
+    
+    Consider the concatenated sequence $S_3 = (s_1, s_2, ..., s_k, t_1, t_2, ..., t_m)$.
+    Applying $S_3$ to $A$:
+    \begin{itemize}
+        \item First $k$ operations transform $A$ into $B$
+        \item Next $m$ operations transform $B$ into $C$
+    \end{itemize}
+    
+    Therefore, $S_3$ transforms $A$ into $C$, proving $A$ is row equivalent to $C$.
+\end{enumerate}
+
+Thus, we have proven all three properties of row equivalence.
+
 \end{document}
