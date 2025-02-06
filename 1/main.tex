@@ -457,6 +457,46 @@ x_1&-2x_2&+x_3 &= 3 &\quad (e_2)\\
 \]
 \end{enumerate}
 
+Switching $e_1$ and $e_2$, we get:
+\[
+\left\{
+\begin{aligned}
+x_1&-2x_2&+x_3 &= 3 &\quad (e_2)\\
+3x_1&-7x_2&+4x_3 &= 10 &\quad (e_1)\\
+2x_1&-x_2&-2x_3 &= 6 &\quad (e_3)
+\end{aligned}
+\right.
+\]
+
+Let $e_1 = -(e_1 - 3e_2)$, $e_3 = e_3 - 2e_2$, we get:
+\[
+\left\{
+\begin{aligned}
+x_1&-2x_2&+x_3 &= 3 &\quad (e_2)\\
+&x_2&-x_3&= -1 &\quad (e_1)\\
+&3x_2&-4x_3&= 0 &\quad (e_3)
+\end{aligned}
+\right.
+\]
+
+Let $e_2 = e_2 + 2e_1$, $e_3 = e_3 - 3e_1$, we get:
+\[
+\left\{
+\begin{aligned}
+x_1&&-x_3 &= 1 &\quad (e_2)\\
+&x_2&-x_3&= -1 &\quad (e_1)\\
+&&-x_3&= 3 &\quad (e_3)
+\end{aligned}
+\right.
+\]
+
+We can see that $x_3 = -3$, plug it into $e_1$, we first get $x_2 = -4$, then plug both of them into $e_2$, we get $x_1 = -2$.
+
+Hence, the solution to the system is:
+\[
+(x_1, x_2, x_3) = (-2, -4, -3)
+\]
+
 \newpage
 
 \section*{Exercise 4}
