@@ -507,6 +507,26 @@ For a nonempty set $S$, we use $\mathcal{F}(S,\mathbb{R})$ to denote the set of 
 \end{enumerate}
 
 \textbf{Solution:}
+
+\begin{enumerate}[label=(\alph*)]
+\item  To show that $W$ is a subspace of $\mathcal{F}(S,\mathbb{R})$, we need to show that it contains the zero function, is closed under addition and scalar multiplication.
+\begin{itemize}
+\item The zero function $\mathbf{0}(s) = 0$ for all $s \in S$ is in $W$ since $\mathbf{0}(s_0) = 0$.
+\item Let $f, g \in W$. Then $f(s_0) = 0$ and $g(s_0) = 0$. For their sum $(f+g)$: $(f+g)(s_0) = f(s_0) + g(s_0) = 0 + 0 = 0$. Therefore, $(f+g) \in W$.
+\item Let $f \in W$ and $c \in \mathbb{R}$. Then $(cf)(s_0) = c\cdot f(s_0) = c\cdot 0 = 0$. Therefore, $cf \in W$.
+\end{itemize}
+
+Therefore, $W$ is a subspace of $\mathcal{F}(S,\mathbb{R})$.
+
+\item Same as above, we need to show that it contains the zero function, is closed under addition and scalar multiplication.
+\begin{itemize}
+\item The zero function $\mathbf{0}(s)$ returns value of 0 at every point, including $s_0$. However, for any function $f \in V$, we require $f(s_0) = 1$. Therefore, $\mathbf{0} \notin V$.
+\end{itemize}
+
+Therefore, $W$ is not a subspace of $\mathcal{F}(S,\mathbb{R})$.
+
+\end{enumerate}
+
 \newpage
 
 \section*{Exercise 5}
