@@ -320,7 +320,49 @@ Hence the general solution is
 \noindent
 (b) Use part (a) to prove that any $j$ vectors in $\mathbb{R}^k$ are linearly dependent if $j > k$. \\
 
-\textbf{Solution:}
+\textbf{Solution:} \\
+
+(a) Reduced Row Echelon Form (RREF) argument:
+
+\begin{itemize}
+\item Write $A$ in its reduced row echelon form (RREF), denoted as $R$.
+\[
+A \longrightarrow R
+\]
+\item In the RREF $R$, there are at most $m$ leading columns(since there are only $m$ rows) and therefore at least $n - m$ columns are free columns. Because $m < n$, we see there is at least one free variable in the system
+\[
+R\,\mathbf{x} = \mathbf{0}.
+\]
+\item The presence of a free variable guarantees that there is a nontrivial (i.e., not all zeros, and e.g., set all non-pivot variables to 1) solution vector $\mathbf{x}$ to the system $R\,\mathbf{x} = \mathbf{0}$. But $R$ is row-equivalent to $A$, so any solution to $R\,\mathbf{x} = \mathbf{0}$ is also a solution to $A\,\mathbf{x} = \mathbf{0}$.
+\item Hence, $\mathcal{N}(A)$ contains a nonzero vector.
+\end{itemize}
+
+(b) We use part (a) to prove that any $j$ vectors in $\mathbb{R}^k$ are linearly dependent if $j > k$.
+
+\begin{itemize}
+\item Let $\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_j \in \mathbb{R}^k$ with $j > k$. 
+\item Form an $k \times j$ matrix $A$ by taking these vectors as its columns:
+\[
+A = 
+\begin{pmatrix}
+| & | &  & | \\
+\mathbf{v}_1 & \mathbf{v}_2 & \cdots & \mathbf{v}_j \\
+| & | &  & |
+\end{pmatrix}.
+\]
+\item Note that $A$ has $k$ rows and $j$ columns. Since $j > k$, we have $k < j$, and by part (a), the null space of $A$ must contain a nonzero vector. 
+\item Let that nonzero vector be $\mathbf{x} = (x_1, x_2, \dots, x_j)^T \neq \mathbf{0}$ satisfying
+\[
+A \mathbf{x} = \mathbf{0}.
+\]
+\item Expanding $A\mathbf{x}$ in terms of the columns $\mathbf{v}_i$ of $A$, we get
+\[
+A\mathbf{x} = x_1 \mathbf{v}_1 + x_2 \mathbf{v}_2 + \cdots + x_j \mathbf{v}_j = \mathbf{0}.
+\]
+\item Since $\mathbf{x} \neq \mathbf{0}$, at least one of the $x_i$'s is nonzero, and hence this is a nontrivial linear combination of the $\mathbf{v}_i$ that gives the zero vector.
+\item Therefore, $\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_j$ are linearly dependent.
+\end{itemize}
+
 \newpage
 
 \section*{Exercise 3}
