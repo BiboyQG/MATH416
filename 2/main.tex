@@ -45,7 +45,273 @@ x_1 + 2x_2 + x_3 - x_4 &= 3 \\
 4x_1 + 8x_2 + 7x_3 + 5x_4 &= 24
 \end{align*}
 
-\textbf{Solution:}
+\textbf{Solution:} \\
+
+(a) Augmented matrix:
+\[
+\left[
+\begin{array}{cc|c}
+2 & 1 & 0 \\
+1 & 1 & 1 \\
+3 & 4 & 5 \\
+3 & 5 & 7
+\end{array}
+\right].
+\]
+
+Perform row operations to get the matrix in reduced row echelon form:
+
+\begin{align*}
+& R_1 \leftrightarrow R_2 
+\quad \longrightarrow 
+\quad
+\left[
+\begin{array}{cc|c}
+1 & 1 & 1 \\
+2 & 1 & 0 \\
+3 & 4 & 5 \\
+3 & 5 & 7
+\end{array}
+\right] \\
+& R_2 \leftarrow R_2 - 2R_1 
+\quad \longrightarrow 
+\quad
+\left[
+\begin{array}{cc|c}
+1 & 1 & 1\\
+0 & -1 & -2\\
+3 & 4 & 5\\
+3 & 5 & 7
+\end{array}
+\right] \\
+& R_3 \leftarrow R_3 - 3R_1 
+\quad \longrightarrow 
+\quad
+\left[
+\begin{array}{cc|c}
+1 & 1 & 1 \\
+0 & -1 & -2 \\
+0 & 1 & 2 \\
+3 & 5 & 7
+\end{array}
+\right] \\
+& R_4 \leftarrow R_4 - 3R_1 
+\quad \longrightarrow 
+\quad
+\left[
+\begin{array}{cc|c}
+1 & 1 & 1 \\
+0 & -1 & -2 \\
+0 & 1 & 2 \\
+0 & 2 & 4
+\end{array}
+\right] \\
+& R_2 \leftarrow -\,R_2 
+\quad \longrightarrow 
+\quad
+\left[
+\begin{array}{cc|c}
+1 & 1 & 1 \\
+0 & 1 & 2 \\
+0 & 1 & 2 \\
+0 & 2 & 4
+\end{array}
+\right] \\
+& R_1 \leftarrow R_1 - R_2 
+\quad R_3 \leftarrow R_3 - R_2 
+\quad R_4 \leftarrow R_4 - 2R_2 
+\\
+&\qquad \longrightarrow 
+\quad
+\left[
+\begin{array}{cc|c}
+1 & 0 & -1 \\
+0 & 1 & 2 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{array}
+\right].
+\end{align*}
+
+Hence, we have the system:
+\[
+\begin{cases}
+x_1 = -1 \\
+x_2 = 2
+\end{cases}
+\]
+
+Thus the unique solution is
+\[
+(x_1, x_2) = (-1,\, 2).
+\]
+
+\bigskip
+
+(b) Augmented matrix:
+\[
+\left[
+\begin{array}{ccc|c}
+1 & 2 & -1 & 1 \\
+1 & 1 & 2 & 0 \\
+5 & 8 & 1 & 1
+\end{array}
+\right]
+\]
+
+Perform row operations to get the matrix in reduced row echelon form:
+
+\begin{align*}
+& R_2 \leftarrow R_2 - R_1 
+\quad \longrightarrow 
+\quad
+\left[
+\begin{array}{ccc|c}
+1 & 2 & -1 & 1 \\
+0 & -1 & 3 & -1 \\
+5 & 8 & 1 & 1
+\end{array}
+\right] \\
+& R_3 \leftarrow R_3 - 5R_1 
+\quad \longrightarrow 
+\quad
+\left[
+\begin{array}{ccc|c}
+1 & 2 & -1 & 1 \\
+0 & -1 & 3 & -1 \\
+0 & -2 & 6 & -4
+\end{array}
+\right] \\
+& R_2 \leftarrow -\,R_2 
+\quad \longrightarrow 
+\quad
+\left[
+\begin{array}{ccc|c}
+1 & 2 & -1 & 1 \\
+0 & 1 & -3 & 1 \\
+0 & -2 & 6 & -4
+\end{array}
+\right] \\
+& R_3 \leftarrow R_3 + 2R_2 
+\quad \longrightarrow 
+\quad
+\left[
+\begin{array}{ccc|c}
+1 & 2 & -1 & 1 \\
+0 & 1 & -3 & 1 \\
+0 & 0 & 0 & -2
+\end{array}
+\right]
+\end{align*}
+
+The last row corresponds to the equation \( 0 = -2 \), which is a contradiction. Therefore, the system is inconsistent and has \textbf{no solutions}.
+
+\bigskip
+
+(c) Augmented matrix:
+\[
+\left[
+\begin{array}{cccc|c}
+2 & 4 & 5 & 7 & 18 \\
+1 & 2 & 1 & -1 & 3 \\
+4 & 8 & 7 & 5 & 24
+\end{array}
+\right].
+\]
+
+Perform row operations to get the matrix in reduced row echelon form:
+
+\begin{align*}
+& R_1 \leftrightarrow R_2 
+\quad \longrightarrow 
+\quad
+\left[
+\begin{array}{cccc|c}
+1 & 2 & 1 & -1 & 3 \\
+2 & 4 & 5 & 7 & 18 \\
+4 & 8 & 7 & 5 & 24
+\end{array}
+\right] \\
+& R_2 \leftarrow R_2 - 2R_1 
+\quad \longrightarrow
+\quad
+\left[
+\begin{array}{cccc|c}
+1 & 2 & 1 & -1 & 3 \\
+0 & 0 & 3 & 9 & 12 \\
+4 & 8 & 7 & 5 & 24
+\end{array}
+\right] \\
+& R_3 \leftarrow R_3 - 4R_1 
+\quad \longrightarrow
+\quad
+\left[
+\begin{array}{cccc|c}
+1 & 2 & 1 & -1 & 3 \\
+0 & 0 & 3 & 9 & 12 \\
+0 & 0 & 3 & 9 & 12
+\end{array}
+\right] \\
+& R_3 \leftarrow R_3 - R_2 
+\quad \longrightarrow
+\quad
+\left[
+\begin{array}{cccc|c}
+1 & 2 & 1 & -1 & 3 \\
+0 & 0 & 3 & 9 & 12 \\
+0 & 0 & 0 & 0 & 0
+\end{array}
+\right] \\
+& R_2 \leftarrow \frac{1}{3} R_2 
+\quad \longrightarrow
+\quad
+\left[
+\begin{array}{cccc|c}
+1 & 2 & 1 & -1 & 3 \\
+0 & 0 & 1 & 3 & 4 \\
+0 & 0 & 0 & 0 & 0
+\end{array}
+\right] \\
+& R_1 \leftarrow R_1 - R_2
+\quad \longrightarrow
+\quad
+\left[
+\begin{array}{cccc|c}
+1 & 2 & 0 & -4 & -1 \\
+0 & 0 & 1 & 3 & 4 \\
+0 & 0 & 0 & 0 & 0
+\end{array}
+\right]
+\end{align*}
+
+Hence, we have the system:
+
+\[
+\begin{cases}
+x_1 + 2x_2 - 4x_4 = -1 \\
+x_3 + 3x_4 = 4
+\end{cases}
+\]
+
+We have 4 variables: \(x_1,x_2,x_3,x_4\) in total, with the pivot variables being \(x_1\) and \(x_3\), while the free variables being \(x_2\) and \(x_4\). \\
+
+Let 
+\[
+x_2 = s,
+\quad
+x_4 = t
+\]
+
+Then from the second row: \(x_3 = 4 - 3t\).  
+From the first row: \(x_1 = -1 - 2s + 4t\).
+
+Hence the general solution is
+\[
+(x_1, x_2, x_3, x_4)
+=
+\bigl(-1 - 2s + 4t,\; s,\; 4 - 3t,\; t\bigr), \quad s,t \in \mathbb{R}
+\]
+
 \newpage
 
 \section*{Exercise 2}
