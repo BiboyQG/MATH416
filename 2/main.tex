@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+
+\DeclareMathOperator{\R}{\mathbb R}
+
+\pagestyle{fancy}
+\fancyhead[L]{Banghao Chi}
+\fancyhead[C]{Homework 2}
+\fancyhead[R]{13th Feb}
+
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\begin{document}
+
+\section*{Exercise 1}
+Solve each of the following linear systems by writing down its augmented matrix, doing row operations to get a matrix in reduced row echelon form, and using that to find all of the solutions. You should label your row operations as in section RREF of [Beezer]. \\
+
+(a) 
+\begin{align*}
+2x_1 + x_2 &= 0 \\
+x_1 + x_2 &= 1 \\
+3x_1 + 4x_2 &= 5 \\
+3x_1 + 5x_2 &= 7
+\end{align*}
+
+(b)
+\begin{align*}
+y_1 + 2y_2 - y_3 &= 1 \\
+y_1 + y_2 + 2y_3 &= 0 \\
+5y_1 + 8y_2 + y_3 &= 1
+\end{align*}
+
+(c)
+\begin{align*}
+2x_1 + 4x_2 + 5x_3 + 7x_4 &= 18 \\
+x_1 + 2x_2 + x_3 - x_4 &= 3 \\
+4x_1 + 8x_2 + 7x_3 + 5x_4 &= 24
+\end{align*}
+
+\textbf{Solution:}
+\newpage
+
+\section*{Exercise 2}
+(a) Suppose $A$ is an $m \times n$ matrix with $m < n$. Consider $A$ as the coefficient matrix of a linear system, where the rightmost column of the augmented matrix is a zero column. Recall from class that we call the solution space of this system, the null space of $A$, which we denote by $\mathcal{N}(A)$. Show that the null space $\mathcal{N}(A)$ contains a nonzero vector by an argument involving the reduced row echelon form of $A$. \\
+
+\noindent
+(b) Use part (a) to prove that any $j$ vectors in $\mathbb{R}^k$ are linearly dependent if $j > k$. \\
+
+\textbf{Solution:}
+\newpage
+
+\section*{Exercise 3}
+(a) Suppose $S$ is a subset of a vector space $V$. Show that if $v \in V$ is contained in span$(S)$, then span$(S)$ = span$(S \cup \{v\})$. \\
+
+\noindent
+(b) Consider $V = \mathbb{R}^2$ and $S = \{(x,y) \mid x \geq 0 \text{ and } y \geq x\}$. Use part (a) to give a short proof that span$(S) = \mathbb{R}^2$ by showing that span$(S)$ contains the vectors $(1,0)$ and $(0,1)$. \\
+
+\textbf{Solution:}
+\newpage
+
+\section*{Exercise 4}
+Let $\mathbf{u}$ and $\mathbf{v}$ be distinct vectors in a vector space $V$. Show that $\{\mathbf{u}, \mathbf{v}\}$ is linearly dependent if and only if one of $\mathbf{u}$ or $\mathbf{v}$ is a scalar multiple of the other. \\
+
+\textbf{Solution:}
+\newpage
+
+\section*{Exercise 5}
+Either prove or give a counterexample to the following statement: If $\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3$ are three vectors in $\mathbb{R}^3$ none of which is a scalar multiple of another, then they are linearly independent. \\
+
+\textbf{Solution:}
+\newpage
+
+\section*{Exercise 6}
+In the vector space $\mathcal{F}(\mathbb{R},\mathbb{R})$, all functions from $\mathbb{R}$ to $\mathbb{R}$, consider the elements $f(t) = \sin(t)$ and $g(t) = \cos(t)$. Is the subset $\{f,g\}$ linearly dependent or linearly independent? Prove your answer. \\
+
+\textbf{Solution:}
+
+\end{document}
