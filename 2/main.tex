@@ -371,7 +371,32 @@ A\mathbf{x} = x_1 \mathbf{v}_1 + x_2 \mathbf{v}_2 + \cdots + x_j \mathbf{v}_j = 
 \noindent
 (b) Consider $V = \mathbb{R}^2$ and $S = \{(x,y) \mid x \geq 0 \text{ and } y \geq x\}$. Use part (a) to give a short proof that span$(S) = \mathbb{R}^2$ by showing that span$(S)$ contains the vectors $(1,0)$ and $(0,1)$. \\
 
-\textbf{Solution:}
+\textbf{Solution:} \\
+
+(a) Since this is an equal sign, we need to show both $\subseteq$ and $\supseteq$. \\
+
+($\subseteq$): Since $S \subseteq S \cup \{v\}$, we immediately have span$(S) \subseteq$ span$(S \cup \{v\})$. \\
+
+($\supseteq$): Let $w \in$ span$(S \cup \{v\})$. Then $w$ can be written as a linear combination:
+\[w = c_1s_1 + c_2s_2 + ... + c_ns_n + kv\]
+
+where $s_i \in S$ and $k \in \mathbb{R}$. Since $v \in$ span$(S)$, we can write:
+\[v = a_1s'_1 + a_2s'_2 + ... + a_ms'_m\]
+
+where $s'_i \in S$. Substituting this expression for $v$:
+\[w = c_1s_1 + c_2s_2 + ... + c_ns_n + k(a_1s'_1 + a_2s'_2 + ... + a_ms'_m)\]
+
+This shows $w$ is a linear combination of elements in $S$, so $w \in$ span$(S)$. Therefore, span$(S)$ = span$(S \cup \{v\})$. \\
+
+(b) We can see that $(1,1) \in S$ since $1 \geq 0$ and $1 \geq 1$.
+Also, $(0,1) \in S$ since $0 \geq 0$ and $1 \geq 0$. \\
+
+Note that $(1,1) - (0,1) = (1,0)$, so $(1,0) \in$ span$(S)$.
+We already have $(0,1) \in S \subseteq$ span$(S)$. \\
+
+Therefore, by part (a), since $(1,0), (0,1) \in$ span$(S)$ and these vectors form a basis for $\mathbb{R}^2$, we have:
+\[\text{span}(S) = \text{span}(\{(1,0), (0,1)\}) = \mathbb{R}^2\]
+
 \newpage
 
 \section*{Exercise 4}
