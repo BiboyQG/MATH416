@@ -402,7 +402,32 @@ Therefore, by part (a), since $(1,0), (0,1) \in$ span$(S)$ and these vectors for
 \section*{Exercise 4}
 Let $\mathbf{u}$ and $\mathbf{v}$ be distinct vectors in a vector space $V$. Show that $\{\mathbf{u}, \mathbf{v}\}$ is linearly dependent if and only if one of $\mathbf{u}$ or $\mathbf{v}$ is a scalar multiple of the other. \\
 
-\textbf{Solution:}
+\textbf{Solution:} \\
+
+Since this is an if and only if statement, we need to show both directions. \\
+
+($\Rightarrow$) If $\{\mathbf{u}, \mathbf{v}\}$ is linearly dependent, then there exist scalars $c_1$ and $c_2$, not both zero, such that:
+\[c_1\mathbf{u} + c_2\mathbf{v} = \mathbf{0}\]
+
+Since $\mathbf{u}$ and $\mathbf{v}$ are distinct vectors, at least one of them is non-zero. Without loss of generality, assume $\mathbf{u} \neq \mathbf{0}$. \\
+
+If $c_1 = 0$, then $c_2\mathbf{v} = \mathbf{0}$. If $\mathbf{v} = \mathbf{0}$, then this equation is satisfied for any $c_2$, including $c_2 = 0$. If $\mathbf{v} \neq \mathbf{0}$, then we must have $c_2 = 0$. In either case, we would have both $c_1 = 0$ and $c_2 = 0$, contradicting that not both coefficients can be zero in a linear dependence relation. \\
+
+Therefore, $c_1 \neq 0$, and we can rearrange the equation:
+\[\mathbf{u} = -\frac{c_2}{c_1}\mathbf{v}\]
+
+Thus, $\mathbf{u}$ is a scalar multiple of $\mathbf{v}$. \\
+
+($\Leftarrow$) Suppose $\mathbf{v} = k\mathbf{u}$ for some scalar $k$. Then:
+\[\mathbf{v} - k\mathbf{u} = \mathbf{0}\]
+
+which can be rewritten as:
+\[1\mathbf{v} + (-k)\mathbf{u} = \mathbf{0}\]
+
+Since $k$ exists (by assumption) and the coefficients 1 and $-k$ are not both zero, we have shown that $\{\mathbf{u}, \mathbf{v}\}$ is linearly dependent. \\
+
+Therefore, $\{\mathbf{u}, \mathbf{v}\}$ is linearly dependent if and only if one of $\mathbf{u}$ or $\mathbf{v}$ is a scalar multiple of the other.
+
 \newpage
 
 \section*{Exercise 5}
