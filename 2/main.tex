@@ -433,7 +433,32 @@ Therefore, $\{\mathbf{u}, \mathbf{v}\}$ is linearly dependent if and only if one
 \section*{Exercise 5}
 Either prove or give a counterexample to the following statement: If $\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3$ are three vectors in $\mathbb{R}^3$ none of which is a scalar multiple of another, then they are linearly independent. \\
 
-\textbf{Solution:}
+\textbf{Solution:} \\
+
+Consider the following three vectors in $\mathbb{R}^3$:
+\begin{align*}
+\mathbf{v}_1 &= (1,0,0) \\
+\mathbf{v}_2 &= (0,1,0) \\
+\mathbf{v}_3 &= (1,1,0)
+\end{align*}
+
+1) First, we need to confirm that none of these vectors is a scalar multiple of another:
+\begin{itemize}
+   \item $\mathbf{v}_3$ cannot be a scalar multiple of $\mathbf{v}_1$ because $\mathbf{v}_3$ has a non-zero second component while $\mathbf{v}_1$ doesn't
+   \item $\mathbf{v}_3$ cannot be a scalar multiple of $\mathbf{v}_2$ because $\mathbf{v}_3$ has a non-zero first component while $\mathbf{v}_2$ doesn't
+   \item $\mathbf{v}_1$ cannot be a scalar multiple of $\mathbf{v}_2$ as they are standard basis vectors
+\end{itemize}
+
+2) We now need to show these vectors are linearly dependent.
+We can see that:
+\[
+\mathbf{v}_1 + \mathbf{v}_2 - \mathbf{v}_3 = (1,0,0) + (0,1,0) - (1,1,0) = (0,0,0)
+\]
+
+Therefore, $\mathbf{v}_1 + \mathbf{v}_2 - \mathbf{v}_3 = \mathbf{0}$ \\
+
+This proves that these vectors are linearly dependent, despite none being a scalar multiple of another. Thus, we have found a counterexample to the original statement, and the statement is false.
+
 \newpage
 
 \section*{Exercise 6}
