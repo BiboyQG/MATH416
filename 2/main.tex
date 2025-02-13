@@ -466,4 +466,27 @@ In the vector space $\mathcal{F}(\mathbb{R},\mathbb{R})$, all functions from $\m
 
 \textbf{Solution:}
 
+We would check if there exist scalars $c_1, c_2 \in \mathbb{R}$, not both zero, such that:
+
+\[c_1f(t) + c_2g(t) = 0 \text{ for all } t \in \mathbb{R}\]
+
+That is:
+\[c_1\sin(t) + c_2\cos(t) = 0 \text{ for all } t \in \mathbb{R}\]
+
+If the equation is true for all $t \in \mathbb{R}$, then it must be true for specific values of $t$.
+
+\begin{itemize}
+\item Evaluating at $t = 0$:
+   $c_1\sin(0) + c_2\cos(0) = 0 + c_2 = 0$
+   Therefore, $c_2 = 0$
+
+\item Evaluating at $t = \frac{\pi}{2}$:
+   $c_1\sin(\frac{\pi}{2}) + c_2\cos(\frac{\pi}{2}) = c_1 + 0 = 0$
+   Therefore, $c_1 = 0$
+
+\item Therefore, the only solution to the equation is $c_1 = c_2 = 0$.
+\end{itemize}
+
+Since the only solution to $c_1f(t) + c_2g(t) = 0$ is the trivial solution $c_1 = c_2 = 0$, the set $\{f,g\}$ is linearly independent.
+
 \end{document}
