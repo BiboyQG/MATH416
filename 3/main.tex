@@ -293,6 +293,36 @@ Let $V$ be a vector space having dimension $n$, and let $S$ be a subset of $V$ t
 
 \textbf{Solution:} \\
 
+(a) Construct a basis $B$ inductively:
+   \begin{itemize}
+   \item If $V = \{0\}$, then $B = \emptyset$ is a basis and we're done.
+   \item Otherwise, choose any nonzero vector $v_1 \in S$ and let $B_1 = \{v_1\}$
+   \end{itemize}
 
+For the inductive step:
+   \begin{itemize}
+   \item If $\text{span}(B_k) = V$, then $B = B_k$ is our basis
+   \item If not, since $S$ generates $V$, there must exist some $v_{k+1} \in S$ that is not in $\text{span}(B_k)$
+   \item Let $B_{k+1} = B_k \cup \{v_{k+1}\}$
+   \end{itemize}
+
+The process would terminate after at most $n$ steps because no linearly independent set in an $n$-dimensional vector space can contain more than $n$ vectors. \\
+
+The resulting set $B$ is a basis for $V$ because:
+\begin{itemize}
+    \item $B \subseteq S$ (by construction)
+    \item $B$ is linearly independent (by construction)
+    \item $B$ spans $V$ (if not, we would have continued the process)
+\end{itemize}
+
+Therefore, we proved that there is a subset of $S$ that is a basis for $V$. \\
+
+(b) Prove by contradiction, we suppose $|S| < n$. \\
+
+Since $S$ generates $V$, every vector in $V$ can be written as a linear combination of vectors in $S$, meaning that $V$ is spanned by fewer than $n$ vectors. \\
+
+However, any spanning set of $V$ must contain at least $\dim(V) = n$ vectors to be able to span $V$, which contradicts our assumption that $|S| < n$. \\
+
+Therefore, $S$ must contain at least $n$ vectors. 
 
 \end{document}
