@@ -260,6 +260,28 @@ Suppose $W$ is a subspace of a finite-dimensional vector space $V$. For some $v 
 
 \textbf{Solution:} \\
 
+Let $\{w_1, w_2, ..., w_n\}$ be a basis for $W$, where $n = \dim(W)$.
+
+Let $B = \{w_1, w_2, ..., w_n, v\}$. We will show this is a basis for $X$. \\
+
+Let $x \in X$. Since $X = \text{span}(W \cup \{v\})$, $x$ can be written as:
+\[x = c_1w_1 + c_2w_2 + ... + c_nw_n + kv\]
+
+where $c_1, c_2, ..., c_n, k \in \mathbb{R}$. Thus, $B$ spans $X$. \\
+
+Suppose $c_1w_1 + c_2w_2 + ... + c_nw_n + kv = 0$ \\
+
+If $k \neq 0$, then:
+\[v = -\frac{c_1}{k}w_1 - \frac{c_2}{k}w_2 - ... - \frac{c_n}{k}w_n\]
+
+This would mean $v \in W$, contradiction. \\
+
+Therefore, $k = 0$ and $c_1 = c_2 = ... = c_n = 0$ (since $\{w_1, w_2, ..., w_n\}$ is linearly independent), proving $B$ is linearly independent. \\
+
+Since $B$ is both spanning and linearly independent, it is a basis for $X$. \\
+
+Therefore, $\dim(X) = |B| = n + 1 = \dim(W) + 1$
+
 \newpage
 
 \section*{Exercise 6}
