@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+
+\DeclareMathOperator{\R}{\mathbb R}
+
+\pagestyle{fancy}
+\fancyhead[L]{Banghao Chi}
+\fancyhead[C]{Homework 4}
+\fancyhead[R]{4th Mar}
+
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\begin{document}
+
+\section*{Exercise 1}
+For the given functions, prove that $T$ is a linear transformation, and find bases for both $\mathcal{N}(T)$ and $\mathcal{R}(T)$. Then compute the nullity and rank of $T$, and verify the dimension theorem. Finally, use the appropriate theorems in this section to determine whether $T$ is one-to-one or onto.
+\begin{itemize}
+    \item[(a)] $T : \mathbb{R}^3 \to \mathbb{R}^2$ defined by $T(a_1, a_2, a_3) = (a_1 - a_2, 2a_3)$.
+
+    \item[(b)] $T : \mathbb{R}^2 \to \mathbb{R}^3$ defined by $T(a_1, a_2) = (a_1 + a_2, 0, 2a_1 - a_2)$.
+
+    \item[(c)] $T : \mathcal{P}_2(\mathbb{R}) \to \mathcal{P}_3(\mathbb{R})$ defined by $T(f(x)) = xf(x) + f'(x)$.
+\end{itemize}
+
+\textbf{Solution: }\\
+
+
+
+\newpage
+
+\section*{Exercise 2}
+\begin{itemize}
+    \item[(a)] Suppose that $T : \mathbb{R}^2 \to \mathbb{R}^2$ is linear, $T(1,0) = (1,4)$ and $T(1,1) = (2,5)$. What is $T(2,3)$? Is $T$ one-to-one?
+
+    \item[(b)] Give an example of a linear transformation $T : \mathbb{R}^2 \to \mathbb{R}^2$ such that $\mathcal{N}(T) = \mathcal{R}(T)$.
+\end{itemize}
+
+\textbf{Solution: }\\
+
+
+
+\newpage
+
+\section*{Exercise 3}
+Let $V,W$ be vector spaces, with $\dim(V) = n, \dim(W) = m$, and $n > m$.
+
+\begin{itemize}
+    \item[(a)] Show that there is no one-to-one linear transformation $T : V \to W$.
+
+    \item[(b)] Show that there is no onto linear transformation $T : W \to V$ (notice that $V,W$ have flipped in this expression!)
+
+    \item[(c)] Show that a linear map $T : V \to W$ need not be onto by giving an example where it is not.
+\end{itemize}
+
+\textbf{Solution: }\\
+
+
+
+\newpage
+
+\section*{Exercise 4}
+Given bases $\beta$ and $\gamma$ of $\mathbb{R}^n$ and $\mathbb{R}^m$, respectively, for each linear transformation $T : \mathbb{R}^n \to \mathbb{R}^m$, compute $[T]_{\beta}^{\gamma}$.
+
+\begin{itemize}
+    \item[(a)] $T : \mathbb{R}^2 \to \mathbb{R}^3$ with $\beta, \gamma$ standard bases and $T(a_1, a_2) = (2a_1 - a_2, 3a_1 + 4a_2, a_1)$.
+
+    \item[(b)] $T : \mathbb{R}^3 \to \mathbb{R}^2$ with $\beta, \gamma$ standard bases and $T(a_1, a_2, a_3) = (2a_1 + 3a_2 - a_3, a_1 + a_3)$.
+
+    \item[(c)] $T : \mathbb{R}^2 \to \mathbb{R}^3$ with $\beta$ standard basis for $\mathbb{R}^2$, $\gamma = \{(1,1,0),(0,1,1),(2,2,3)\}$ and $T(a_1, a_2) = (a_1 - a_2, a_1, 2a_1 + a_2)$.
+
+    \item[(d)] $T : \mathbb{R}^2 \to \mathbb{R}^3$ with $\beta = \{(1,2),(2,3)\}, \gamma = \{(1,1,0),(0,1,1),(2,2,3)\}$ and $T(a_1, a_2) = (a_1 - a_2, a_1, 2a_1 + a_2)$.
+\end{itemize}
+
+\textbf{Solution: }\\
+
+
+
+\newpage
+
+\section*{Exercise 5}
+Let
+\begin{align*}
+\alpha = \left\{\left(\begin{matrix} 1 & 0 \\ 0 & 0 \end{matrix}\right), \left(\begin{matrix} 0 & 1 \\ 0 & 0 \end{matrix}\right), \left(\begin{matrix} 0 & 0 \\ 1 & 0 \end{matrix}\right), \left(\begin{matrix} 0 & 0 \\ 0 & 1 \end{matrix}\right)\right\}, \quad \beta = \{1, x, x^2\} \quad \text{and} \quad \gamma = \{1\}.
+\end{align*}
+
+\begin{itemize}
+    \item[(a)] Define $T : \mathcal{M}_{2\times2}(\mathbb{R}) \to \mathcal{M}_{2\times2}(\mathbb{R})$ by $T(A) = A^t$. Compute $[T]_{\alpha}$.
+
+    \item[(b)] Define 
+    \begin{align*}
+    T : \mathcal{P}_2(\mathbb{R}) \to \mathcal{M}_{2\times2}(\mathbb{R}) \text{ by } T(f) = \left(\begin{matrix} f'(0) & 2f(1) \\ 0 & f''(3) \end{matrix}\right),
+    \end{align*}
+    where $'$ denotes differentiation. Compute $[T]_{\beta}^{\alpha}$.
+
+    \item[(c)] Define $T : \mathcal{M}_{2\times2}(\mathbb{R}) \to \mathbb{R}$ by $T(A) = \text{Tr}(A) = \text{sum of diagonal elements of }A$. Compute $[T]_{\alpha}^{\gamma}$.
+
+    \item[(d)] Define $T : \mathcal{P}_2(\mathbb{R}) \to \mathbb{R}$ by $T(f(x)) = f(2)$. Compute $[T]_{\beta}^{\gamma}$.
+
+    \item[(e)] If $A = \left(\begin{matrix} 1 & -2 \\ 0 & 4 \end{matrix}\right)$ compute $[A]_{\alpha}$.
+
+    \item[(f)] If $f(x) = 3 - 6x + x^2$, compute $[f]_{\beta}$.
+
+    \item[(g)] For $a \in \mathbb{R}$, compute $[a]_{\gamma}$.
+\end{itemize}
+
+\textbf{Solution: }\\
+
+
+
+\newpage
+
+\section*{Exercise 6}
+We define the linear transformation $T_{\theta} : \mathbb{R}^2 \to \mathbb{R}^2$ to be rotation counter-clockwise about the origin through angle $\theta$. Let $T_x$ be the transformation that reflects in the $x$-axis.
+
+\begin{itemize}
+    \item[(a)] Write down the matrices of $T_{\theta}$ and $T_x$ with the respect to the standard basis $\beta = \{(1,0),(0,1)\}$ for $\mathbb{R}^2$.
+
+    \item[(b)] Show that for $\theta \in (0,\pi) \cup (\pi,2\pi)$ one has
+    \begin{align*}
+    T_x \circ T_{\theta} \neq T_{\theta} \circ T_x.
+    \end{align*}
+
+    \item[(c)] Next, show that there is some angle $\psi$ such that
+    \begin{align*}
+    T_x \circ T_{\psi} = T_{\theta} \circ T_x.
+    \end{align*}
+
+    \item[(d)] What is the relationship between $\theta$ and $\psi$? Discuss the geometric meaning of this computation.
+\end{itemize}
+
+\textbf{Solution: }\\
+
+
+
+\newpage
+
+\end{document}
