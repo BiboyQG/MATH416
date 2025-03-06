@@ -32,7 +32,218 @@ For the given functions, prove that $T$ is a linear transformation, and find bas
 
 \textbf{Solution: }\\
 
+(a) $T : \mathbb{R}^3 \to \mathbb{R}^2$ defined by $T(a_1, a_2, a_3) = (a_1 - a_2, 2a_3)$ \\
 
+First, we prove that $T$ is a linear transformation. \\
+
+Let $\vec{u} = (u_1, u_2, u_3)$ and $\vec{v} = (v_1, v_2, v_3)$ be vectors in $\mathbb{R}^3$, and let $c$ be a scalar. \\
+
+(i)
+\begin{align*}
+    T(\vec{u} + \vec{v}) &= T(u_1 + v_1, u_2 + v_2, u_3 + v_3) \\
+    &= ((u_1 + v_1) - (u_2 + v_2), 2(u_3 + v_3)) \\
+    &= ((u_1 - u_2) + (v_1 - v_2), 2(u_3 + v_3)) \\
+    &= (u_1 - u_2, 2u_3) + (v_1 - v_2, 2v_3) \\
+    &= T(\vec{u}) + T(\vec{v})
+\end{align*}
+
+(ii)
+\begin{align*}
+    T(c\vec{u}) &= T(cu_1, cu_2, cu_3) \\
+    &= (cu_1 - cu_2, 2cu_3) \\
+    &= c(u_1 - u_2, 2u_3) \\
+    &= cT(\vec{u})
+\end{align*}
+
+Since both conditions are satisfied, $T$ is a linear transformation. \\
+
+Next, we find a basis for $\mathcal{N}(T)$. \\
+
+We want to find all vectors $(a_1, a_2, a_3)$ such that $T(a_1, a_2, a_3) = (0, 0)$.
+This gives us the system:
+\begin{align*}
+a_1 - a_2 &= 0\\
+2a_3 &= 0
+\end{align*}
+
+Solving, we get $a_1 = a_2$ and $a_3 = 0$. The general solution is $(a_1, a_1, 0)$ where $a_1$ is free.
+Thus, a basis for $\mathcal{N}(T)$ is $\{(1, 1, 0)\}$. \\
+
+Next, we find a basis for $\mathcal{R}(T)$. \\
+
+We can determine the range by examining the images of the standard basis vectors:
+\begin{align*}
+T(1,0,0) &= (1,0)\\
+T(0,1,0) &= (-1,0)\\
+T(0,0,1) &= (0,2)
+\end{align*}
+
+Note that $(1,0) = -1(-1,0)$, so a basis for $\mathcal{R}(T)$ is $\{(1,0), (0,2)/2\} = \{(1,0), (0,1)\}$. \\
+
+Next, we compute nullity and rank:
+\begin{align*}
+    \text{nullity}(T) &= \dim(\mathcal{N}(T)) = 1\\
+    \text{rank}(T) &= \dim(\mathcal{R}(T)) = 2
+\end{align*}
+
+Next, we verify the dimension theorem:
+\begin{align*}
+    \text{nullity}(T) + \text{rank}(T) = 1 + 2 = 3 = \dim(\mathbb{R}^3)
+\end{align*}
+
+The dimension theorem is verified. \\
+
+Finally, we determine if $T$ is one-to-one or onto:
+\begin{itemize}
+    \item Since $\text{nullity}(T) > 0$, $T$ is not one-to-one(since there exists a non-zero vector $v$ in the null space such that $T(v) = 0$, and therefore for any $u$ in the domain, $T(u) = T(u + v)$, mapping different inputs to the same output, making it not injective).
+    \item Since $\text{rank}(T) = \dim(\mathbb{R}^2) = 2$, $T$ is onto(since the range of $T$ is the entire codomain $\mathbb{R}^2$, meaning every element of $\mathbb{R}^2$ is mapped to by some element of $\mathbb{R}^3$).
+\end{itemize}
+
+(b) $T : \mathbb{R}^2 \to \mathbb{R}^3$ defined by $T(a_1, a_2) = (a_1 + a_2, 0, 2a_1 - a_2)$ \\
+
+First, we prove that $T$ is a linear transformation. \\
+
+Let $\vec{u} = (u_1, u_2)$ and $\vec{v} = (v_1, v_2)$ be vectors in $\mathbb{R}^2$, and let $c$ be a scalar. \\
+
+(i)
+\begin{align*}
+    T(\vec{u} + \vec{v}) &= T(u_1 + v_1, u_2 + v_2) \\
+    &= ((u_1 + v_1) + (u_2 + v_2), 0, 2(u_1 + v_1) - (u_2 + v_2)) \\
+    &= ((u_1 + u_2) + (v_1 + v_2), 0, (2u_1 - u_2) + (2v_1 - v_2)) \\
+    &= (u_1 + u_2, 0, 2u_1 - u_2) + (v_1 + v_2, 0, 2v_1 - v_2) \\
+    &= T(\vec{u}) + T(\vec{v})
+\end{align*}
+
+(ii)
+\begin{align*}
+    T(c\vec{u}) &= T(cu_1, cu_2) \\
+    &= (cu_1 + cu_2, 0, 2cu_1 - cu_2) \\
+    &= c(u_1 + u_2, 0, 2u_1 - u_2) \\
+    &= cT(\vec{u})
+\end{align*}
+
+Since both conditions are satisfied, $T$ is a linear transformation. \\
+
+Next, we find a basis for $\mathcal{N}(T)$. \\
+
+We want to find all vectors $(a_1, a_2)$ such that $T(a_1, a_2) = (0, 0, 0)$.
+This gives us the system:
+\begin{align*}
+a_1 + a_2 &= 0\\
+2a_1 - a_2 &= 0
+\end{align*}
+
+From the first equation, $a_2 = -a_1$. Substituting into the second equation:
+\begin{align*}
+2a_1 - (-a_1) &= 0\\
+2a_1 + a_1 &= 0\\
+3a_1 &= 0
+\end{align*}
+
+Thus, $a_1 = 0$ and consequently $a_2 = 0$.
+Therefore, $\mathcal{N}(T) = \{(0,0)\}$, and the basis is the empty set $\{\}$. \\
+
+Next, we find a basis for $\mathcal{R}(T)$. \\
+
+We can determine the range by examining the images of the standard basis vectors:
+\begin{align*}
+T(1,0) &= (1,0,2)\\
+T(0,1) &= (1,0,-1)
+\end{align*}
+
+These two vectors are linearly independent, so a basis for $\mathcal{R}(T)$ is $\{(1,0,2), (1,0,-1)\}$. \\
+
+Next, we compute nullity and rank:
+\begin{align*}
+    \text{nullity}(T) &= \dim(\mathcal{N}(T)) = 0\\
+    \text{rank}(T) &= \dim(\mathcal{R}(T)) = 2
+\end{align*}
+
+Next, we verify the dimension theorem:
+\begin{align*}
+    \text{nullity}(T) + \text{rank}(T) = 0 + 2 = 2 = \dim(\mathbb{R}^2)
+\end{align*}
+
+The dimension theorem is verified. \\
+
+Finally, we determine if $T$ is one-to-one or onto:
+\begin{itemize}
+    \item Since $\text{nullity}(T) = 0$, $T$ is one-to-one (since the only vector that maps to zero is the zero vector itself, meaning different inputs map to different outputs).
+    \item Since $\text{rank}(T) = 2 < 3 = \dim(\mathbb{R}^3)$, $T$ is not onto (since the range of $T$ is a proper subspace of the codomain $\mathbb{R}^3$, meaning there are elements in $\mathbb{R}^3$ that cannot be reached as the image of any vector in $\mathbb{R}^2$).
+\end{itemize}
+
+(c) $T : \mathcal{P}_2(\mathbb{R}) \to \mathcal{P}_3(\mathbb{R})$ defined by $T(f(x)) = xf(x) + f'(x)$ \\
+
+First, we prove that $T$ is a linear transformation. \\
+
+Let $f(x)$ and $g(x)$ be polynomials in $\mathcal{P}_2(\mathbb{R})$, and let $c$ be a scalar. \\
+
+(i)
+\begin{align*}
+    T(f(x) + g(x)) &= x(f(x) + g(x)) + (f(x) + g(x))' \\
+    &= xf(x) + xg(x) + f'(x) + g'(x) \\
+    &= (xf(x) + f'(x)) + (xg(x) + g'(x)) \\
+    &= T(f(x)) + T(g(x))
+\end{align*}
+
+(ii)
+\begin{align*}
+    T(c \cdot f(x)) &= x(c \cdot f(x)) + (c \cdot f(x))' \\
+    &= c \cdot xf(x) + c \cdot f'(x) \\
+    &= c \cdot (xf(x) + f'(x)) \\
+    &= c \cdot T(f(x))
+\end{align*}
+
+Since both conditions are satisfied, $T$ is a linear transformation. \\
+
+Next, we find a basis for $\mathcal{N}(T)$. \\
+
+Let $f(x) = a_0 + a_1x + a_2x^2 \in \mathcal{P}_2(\mathbb{R})$. Then:
+\begin{align*}
+    T(f(x)) &= x(a_0 + a_1x + a_2x^2) + (a_1 + 2a_2x) \\
+    &= a_0x + a_1x^2 + a_2x^3 + a_1 + 2a_2x \\
+    &= a_1 + (a_0 + 2a_2)x + a_1x^2 + a_2x^3
+\end{align*}
+
+For $T(f(x)) = 0$, all coefficients must be 0:
+\begin{align*}
+    a_1 &= 0 \\
+    a_0 + 2a_2 &= 0 \\
+    a_2 &= 0
+\end{align*}
+
+With $a_2 = 0$ and $a_0 + 2a_2 = 0$, we get $a_0 = 0$.
+Therefore, $a_0 = a_1 = a_2 = 0$, so $\mathcal{N}(T) = \{0\}$, and the basis is the empty set $\{\}$. \\
+
+Next, we find a basis for $\mathcal{R}(T)$. \\
+
+We can determine the range by examining the images of the standard basis for $\mathcal{P}_2(\mathbb{R})$:
+\begin{align*}
+    T(1) &= x \cdot 1 + (1)' = x \\
+    T(x) &= x \cdot x + (x)' = x^2 + 1 \\
+    T(x^2) &= x \cdot x^2 + (x^2)' = x^3 + 2x
+\end{align*}
+
+These polynomials are linearly independent, so a basis for $\mathcal{R}(T)$ is $\{x, x^2 + 1, x^3 + 2x\}$. \\
+
+Next, we compute nullity and rank:
+\begin{align*}
+    \text{nullity}(T) &= \dim(\mathcal{N}(T)) = 0 \\
+    \text{rank}(T) &= \dim(\mathcal{R}(T)) = 3
+\end{align*}
+
+Next, we verify the dimension theorem:
+\begin{align*}
+    \text{nullity}(T) + \text{rank}(T) = 0 + 3 = 3 = \dim(\mathcal{P}_2(\mathbb{R}))
+\end{align*}
+
+The dimension theorem is verified. \\
+
+Finally, we determine if $T$ is one-to-one or onto:
+\begin{itemize}
+    \item Since $\text{nullity}(T) = 0$, $T$ is one-to-one (since the null space contains only the zero polynomial, meaning different polynomials map to different outputs).
+    \item Since $\text{rank}(T) = 3 < 4 = \dim(\mathcal{P}_3(\mathbb{R}))$, $T$ is not onto (since the range of $T$ is a proper subspace of the codomain $\mathcal{P}_3(\mathbb{R})$, meaning there are polynomials in $\mathcal{P}_3(\mathbb{R})$ that cannot be reached as the image of any polynomial in $\mathcal{P}_2(\mathbb{R})$).
+\end{itemize}
 
 \newpage
 
