@@ -256,7 +256,63 @@ Finally, we determine if $T$ is one-to-one or onto:
 
 \textbf{Solution: }\\
 
+(a) Since $T$ is linear, we have $T(1,1) = T(1,0) + T(0,1)$ \\
 
+This gives us:
+\begin{align*}
+(2,5) &= (1,4) + T(0,1)\\
+\end{align*}
+
+Solving for $T(0,1)$:
+\begin{align*}
+T(0,1) &= (2,5) - (1,4) = (1,1)\\
+\end{align*}
+
+Now we find $T(2,3)$ using linearity:
+\begin{align*}
+T(2,3) &= 2T(1,0) + 3T(0,1)\\
+&= 2(1,4) + 3(1,1)\\
+&= (2,8) + (3,3)\\
+&= (5,11)\\
+\end{align*}
+
+To determine if $T$ is one-to-one, we want to show that $T(v) = 0$ implies $v = 0$. \\
+
+Suppose $T(a,b) = (0,0)$ for some vector $(a,b)$. Using linearity:
+\begin{align*}
+T(a,b) &= aT(1,0) + bT(0,1)\\
+&= a(1,4) + b(1,1)\\
+&= (a+b, 4a+b)\\
+&= (0,0)
+\end{align*}
+
+Solving, we get $a = 0$ and $b = 0$, so $(a,b) = (0,0)$, which proves that $T$ is one-to-one. \\
+
+(b) We need to find a linear transformation $T$ such that $\mathcal{N}(T) = \mathcal{R}(T)$ \\
+
+Consider the transformation defined by the matrix:
+\begin{align*}
+A &= \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}\\
+\end{align*}
+
+For any vector $(x,y)$, we have:
+\begin{align*}
+A\begin{bmatrix} x \\ y \end{bmatrix} &= \begin{bmatrix} y \\ 0 \end{bmatrix}\\
+\end{align*}
+
+The null space consists of vectors $(x,y)$ such that $A(x,y) = (0,0)$, so:
+\begin{align*}
+\mathcal{N}(A) &= \{(x,0) : x \in \mathbb{R}\}\\
+\end{align*}
+
+The range consists of all possible outputs of $A$:
+\begin{align*}
+\mathcal{R}(A) &= \{(z,0) : z \in \mathbb{R}\}\\
+\end{align*}
+
+Both are the $x$-axis, so $\mathcal{N}(A) = \mathcal{R}(A)$ \\
+
+Therefore, the transformation $T(x,y) = (y,0)$ satisfies the requirement.
 
 \newpage
 
