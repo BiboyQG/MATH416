@@ -531,7 +531,152 @@ Let
 
 \textbf{Solution: }\\
 
+(a) Define $T : \mathcal{M}_{2\times2}(\mathbb{R}) \to \mathcal{M}_{2\times2}(\mathbb{R})$ by $T(A) = A^t$. \\
 
+Compute the image of each basis vector under $T$:
+
+$T(\alpha_1) = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}^t = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} = 1\alpha_1 + 0\alpha_2 + 0\alpha_3 + 0\alpha_4$
+
+$T(\alpha_2) = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}^t = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix} = 0\alpha_1 + 0\alpha_2 + 1\alpha_3 + 0\alpha_4$
+
+$T(\alpha_3) = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}^t = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} = 0\alpha_1 + 1\alpha_2 + 0\alpha_3 + 0\alpha_4$
+
+$T(\alpha_4) = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}^t = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} = 0\alpha_1 + 0\alpha_2 + 0\alpha_3 + 1\alpha_4$
+
+Therefore:
+\begin{align*}
+[T]_{\alpha} = \begin{pmatrix} 
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+\end{align*}
+
+(b) Define $T : \mathcal{P}_2(\mathbb{R}) \to \mathcal{M}_{2\times2}(\mathbb{R})$ by $T(f) = \begin{pmatrix} f'(0) & 2f(1) \\ 0 & f''(3) \end{pmatrix}$. \\
+
+For $\beta_1 = 1$:
+\begin{itemize}
+    \item $\beta_1'(x) = 0$, so $\beta_1'(0) = 0$
+    \item $\beta_1(1) = 1$
+    \item $\beta_1''(x) = 0$, so $\beta_1''(3) = 0$
+\end{itemize}
+
+Thus $T(\beta_1) = \begin{pmatrix} 0 & 2 \\ 0 & 0 \end{pmatrix} = 0\alpha_1 + 2\alpha_2 + 0\alpha_3 + 0\alpha_4$
+
+For $\beta_2 = x$:
+\begin{itemize}
+    \item $\beta_2'(x) = 1$, so $\beta_2'(0) = 1$
+    \item $\beta_2(1) = 1$
+    \item $\beta_2''(x) = 0$, so $\beta_2''(3) = 0$
+\end{itemize}
+
+Thus $T(\beta_2) = \begin{pmatrix} 1 & 2 \\ 0 & 0 \end{pmatrix} = 1\alpha_1 + 2\alpha_2 + 0\alpha_3 + 0\alpha_4$
+
+For $\beta_3 = x^2$:
+\begin{itemize}
+    \item $\beta_3'(x) = 2x$, so $\beta_3'(0) = 0$
+    \item $\beta_3(1) = 1$
+    \item $\beta_3''(x) = 2$, so $\beta_3''(3) = 2$
+\end{itemize}
+
+Thus $T(\beta_3) = \begin{pmatrix} 0 & 2 \\ 0 & 2 \end{pmatrix} = 0\alpha_1 + 2\alpha_2 + 0\alpha_3 + 2\alpha_4$
+
+Therefore:
+\begin{align*}
+[T]_{\beta}^{\alpha} = \begin{pmatrix} 
+0 & 1 & 0 \\
+2 & 2 & 2 \\
+0 & 0 & 0 \\
+0 & 0 & 2
+\end{pmatrix}
+\end{align*}
+
+(c) Define $T : \mathcal{M}_{2\times2}(\mathbb{R}) \to \mathbb{R}$ by $T(A) = \text{Tr}(A) = \text{sum of diagonal elements of }A$. \\
+
+Computing the trace of each basis element:
+\begin{align*}
+T(\alpha_1) &= \text{Tr}\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} = 1\\
+T(\alpha_2) &= \text{Tr}\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} = 0\\
+T(\alpha_3) &= \text{Tr}\begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix} = 0\\
+T(\alpha_4) &= \text{Tr}\begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} = 1
+\end{align*}
+
+Since $\gamma = \{1\}$, we have $T(\alpha_1) = 1\cdot 1$, $T(\alpha_2) = 0\cdot 1$, $T(\alpha_3) = 0\cdot 1$, and $T(\alpha_4) = 1\cdot 1$.
+
+Therefore:
+\begin{align*}
+[T]_{\alpha}^{\gamma} = \begin{pmatrix} 1 & 0 & 0 & 1 \end{pmatrix}
+\end{align*}
+
+(d) Define $T : \mathcal{P}_2(\mathbb{R}) \to \mathbb{R}$ by $T(f(x)) = f(2)$. \\
+
+Evaluating each basis polynomial at $x = 2$:
+\begin{align*}
+T(\beta_1) &= 1(2) = 1\\
+T(\beta_2) &= x(2) = 2\\
+T(\beta_3) &= x^2(2) = 4
+\end{align*}
+
+Since $\gamma = \{1\}$, each value can be expressed as a multiple of 1:
+\begin{align*}
+T(\beta_1) &= 1\cdot 1\\
+T(\beta_2) &= 2\cdot 1\\
+T(\beta_3) &= 4\cdot 1
+\end{align*}
+
+Therefore:
+\begin{align*}
+[T]_{\beta}^{\gamma} = \begin{pmatrix} 1 & 2 & 4 \end{pmatrix}
+\end{align*}
+
+(e) If $A = \begin{pmatrix} 1 & -2 \\ 0 & 4 \end{pmatrix}$ compute $[A]_{\alpha}$. \\
+
+We want to express $A$ as a linear combination of the basis elements:
+\begin{align*}
+A &= c_1\alpha_1 + c_2\alpha_2 + c_3\alpha_3 + c_4\alpha_4
+\end{align*}
+
+Comparing entries:
+\begin{align*}
+(1,1)\text{-entry: } 1 &= c_1 \implies c_1 = 1\\
+(1,2)\text{-entry: } -2 &= c_2 \implies c_2 = -2\\
+(2,1)\text{-entry: } 0 &= c_3 \implies c_3 = 0\\
+(2,2)\text{-entry: } 4 &= c_4 \implies c_4 = 4
+\end{align*}
+
+Therefore:
+\begin{align*}
+[A]_{\alpha} = \begin{pmatrix} 1 \\ -2 \\ 0 \\ 4 \end{pmatrix}
+\end{align*}
+
+(f) If $f(x) = 3 - 6x + x^2$, compute $[f]_{\beta}$. \\
+
+We want to express $f(x)$ in terms of the basis $\beta = \{1, x, x^2\}$:
+\begin{align*}
+f(x) = c_1\cdot 1 + c_2 \cdot x + c_3 \cdot x^2
+\end{align*}
+
+Comparing coefficients:
+\begin{align*}
+3 - 6x + x^2 = c_1 + c_2 x + c_3 x^2
+\end{align*}
+
+Thus $c_1 = 3$, $c_2 = -6$, and $c_3 = 1$. \\
+
+Therefore:
+\begin{align*}
+[f]_{\beta} = \begin{pmatrix} 3 \\ -6 \\ 1 \end{pmatrix}
+\end{align*}
+
+(g) For $a \in \mathbb{R}$, compute $[a]_{\gamma}$. \\
+
+Since $\gamma = \{1\}$, we express $a$ as $a = c_1 \cdot 1$, which gives $c_1 = a$. \\
+
+Therefore:
+\begin{align*}
+[a]_{\gamma} = \begin{pmatrix} a \end{pmatrix}
+\end{align*}
 
 \newpage
 
