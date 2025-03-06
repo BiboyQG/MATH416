@@ -329,7 +329,61 @@ Let $V,W$ be vector spaces, with $\dim(V) = n, \dim(W) = m$, and $n > m$.
 
 \textbf{Solution: }\\
 
+(a) Show that there is no one-to-one linear transformation $T : V \to W$. \\
 
+Suppose there exists a one-to-one linear transformation $T : V \to W$. \\
+
+Since $T$ is one-to-one, we know that $\dim(\mathcal{N}(T)) = 0$. \\
+
+By the Rank-Nullity theorem:
+\begin{align*}
+\dim(V) &= \dim(\mathcal{N}(T)) + \dim(\mathcal{R}(T))\\
+n &= 0 + \dim(\mathcal{R}(T))\\
+\end{align*}
+
+So $\dim(\mathcal{R}(T)) = n$. But since $\mathcal{R}(T) \subseteq W$, we must have $\dim(\mathcal{R}(T)) \leq \dim(W) = m$, which means $n \leq m$, contradiction. \\
+
+Therefore, there cannot be a one-to-one linear transformation $T : V \to W$. \\
+
+(b) Show that there is no onto linear transformation $T : W \to V$. \\
+
+Suppose there exists an onto linear transformation $T : W \to V$. \\
+
+Since $T$ is onto, $\dim(\mathcal{R}(T)) = \dim(V) = n$. \\
+
+By the Rank-Nullity theorem:
+\begin{align*}
+\dim(W) &= \dim(\mathcal{N}(T)) + \dim(\mathcal{R}(T))\\
+m &= \dim(\mathcal{N}(T)) + n
+\end{align*}
+
+Since $\dim(\mathcal{N}(T)) \geq 0$, we have $m \geq n$, which contradicts our given condition that $n > m$. \\
+
+Therefore, there cannot be an onto linear transformation $T : W \to V$. \\
+
+(c) Show that a linear map $T : V \to W$ need not be onto by giving an example where it is not. \\
+
+Let $V = \mathbb{R}^3$ and $W = \mathbb{R}^2$, so $n = 3 > m = 2$. \\
+
+Define $T: \mathbb{R}^3 \to \mathbb{R}^2$ by $T(x, y, z) = (0, y)$ for all $(x, y, z) \in \mathbb{R}^3$. \\
+
+It is linear because:
+\begin{align*}
+T((x_1, y_1, z_1) + (x_2, y_2, z_2)) &= T(x_1 + x_2, y_1 + y_2, z_1 + z_2)\\
+&= (0, y_1 + y_2)\\
+&= (0, y_1) + (0, y_2)\\
+&= T(x_1, y_1, z_1) + T(x_2, y_2, z_2)
+\end{align*}
+
+And for any scalar $c$:
+\begin{align*}
+T(c(x, y, z)) &= T(cx, cy, cz)\\
+&= (0, cy)\\
+&= c(0, y)\\
+&= cT(x, y, z)
+\end{align*}
+
+The image of $T$ is $\{(0, y) : y \in \mathbb{R}\}$, which is just the $y$-axis of $\mathbb{R}^2$. Since there are points in $\mathbb{R}^2$ (like $(1, 0)$) that are not in the image of $T$, the transformation is not onto.
 
 \newpage
 
