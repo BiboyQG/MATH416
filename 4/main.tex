@@ -701,8 +701,93 @@ We define the linear transformation $T_{\theta} : \mathbb{R}^2 \to \mathbb{R}^2$
 
 \textbf{Solution: }\\
 
+(a) For $T_{\theta}$, we want to find where the basis vectors are mapped:
+\begin{align*}
+T_{\theta}(1,0) &= (\cos\theta, \sin\theta)\\
+T_{\theta}(0,1) &= (-\sin\theta, \cos\theta)
+\end{align*}
+
+Therefore:
+$[T_{\theta}]_{\beta} = 
+\begin{pmatrix} 
+\cos\theta & -\sin\theta \\ 
+\sin\theta & \cos\theta 
+\end{pmatrix}$
+
+For $T_x$:
+\begin{align*}
+T_x(1,0) &= (1,0)\\
+T_x(0,1) &= (0,-1)
+\end{align*}
+
+Therefore:
+$[T_x]_{\beta} = 
+\begin{pmatrix} 
+1 & 0 \\ 
+0 & -1 
+\end{pmatrix}$ \\
+
+(b)
+\begin{align*}
+T_x \circ T_{\theta} = 
+\begin{pmatrix} 
+1 & 0 \\ 
+0 & -1 
+\end{pmatrix}
+\begin{pmatrix} 
+\cos\theta & -\sin\theta \\ 
+\sin\theta & \cos\theta 
+\end{pmatrix} = 
+\begin{pmatrix} 
+\cos\theta & -\sin\theta \\ 
+-\sin\theta & -\cos\theta 
+\end{pmatrix}
+\end{align*}
+\begin{align*}
+T_{\theta} \circ T_x = 
+\begin{pmatrix} 
+\cos\theta & -\sin\theta \\ 
+\sin\theta & \cos\theta 
+\end{pmatrix}
+\begin{pmatrix} 
+1 & 0 \\ 
+0 & -1 
+\end{pmatrix} = 
+\begin{pmatrix} 
+\cos\theta & \sin\theta \\ 
+\sin\theta & -\cos\theta 
+\end{pmatrix}
+\end{align*}
+
+For these two matrices to be equal, we need $-\sin\theta = \sin\theta$, which implies $\sin\theta = 0$. This occurs only when $\theta = 0, \pi, \text{ or } 2\pi$. \\
+
+Since $\theta \in (0,\pi) \cup (\pi,2\pi)$, we have $\sin\theta \neq 0$, so $T_x \circ T_{\theta} \neq T_{\theta} \circ T_x$. \\
+
+(c) $T_x \circ T_{\psi} = T_{\theta} \circ T_x$, we get:
+\begin{align*}
+\begin{pmatrix} 
+\cos\psi & -\sin\psi \\ 
+-\sin\psi & -\cos\psi 
+\end{pmatrix} = 
+\begin{pmatrix} 
+\cos\theta & \sin\theta \\ 
+\sin\theta & -\cos\theta 
+\end{pmatrix}
+\end{align*}
+
+Comparing coefficients:
+\begin{align*}
+\cos\psi &= \cos\theta\\
+-\sin\psi &= \sin\theta\\
+\end{align*}
 
 
-\newpage
+Since $\sin\psi = -\sin\theta$ and $\cos\psi = \cos\theta$, we have $\psi = -\theta + 2\pi n, \quad n \in \mathbb{Z}$ \\
+
+Therefore, $\psi = 2\pi - \theta$ satisfies $T_x \circ T_{\psi} = T_{\theta} \circ T_x$. \\
+
+(d) The relationship between $\theta$ and $\psi$ is $\psi = 2\pi - \theta$. \\
+
+This relationship involves rotations and reflections. When we apply $T_x \circ T_{\psi}$, we rotate counter-clockwise by angle $\psi$ first, then reflect across the $x$-axis. The result equals $T_{\theta} \circ T_x$, where we first reflect across the $x$-axis, then rotate counter-clockwise by $2\pi - \psi$.
 
 \end{document}
