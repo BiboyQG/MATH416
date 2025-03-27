@@ -279,7 +279,39 @@ Suppose $A$ and $B$ are invertible $n \times n$ matrices.
 
 \textbf{Solution: } \\
 
+(a)
+\begin{align*}
+(AB)(B^{-1}A^{-1}) &= A(BB^{-1})A^{-1} \\
+&= A(I)A^{-1} \\
+&= AA^{-1} \\
+&= I
+\end{align*}
 
+\begin{align*}
+(B^{-1}A^{-1})(AB) &= B^{-1}(A^{-1}A)B \\
+&= B^{-1}(I)B \\
+&= B^{-1}B \\
+&= I
+\end{align*}
+
+Since both products equal the identity matrix $I$, we have proven that $(AB)^{-1} = B^{-1}A^{-1}$. \\
+
+(b)
+Using the property that $(CD)^t = D^t C^t$ for any matrices $C$ and $D$:
+\begin{align*}
+(A^t)((A^{-1})^t) &= (A^{-1}A)^t \\
+&= I^t \\
+&= I
+\end{align*}
+
+Similarly:
+\begin{align*}
+((A^{-1})^t)(A^t) &= (AA^{-1})^t \\
+&= I^t \\
+&= I
+\end{align*}
+
+Since both products equal the identity matrix $I$, we have proven that $(A^t)^{-1} = (A^{-1})^t$.
 
 \newpage
 
