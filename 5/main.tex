@@ -32,7 +32,86 @@ Compute $A^t$, $A^tB$, $BC^t$, $CB$, and $CA$.
 
 \textbf{Solution: } \\
 
+\begin{enumerate}
+\item[(a)] 
 
+\begin{enumerate}
+\item[1.] $2B + 3C$:
+\begin{align*}
+2B &= \begin{pmatrix} 2 & 0 & -6 \\ 8 & 2 & 4 \end{pmatrix} \\
+3C &= \begin{pmatrix} 3 & 3 & 12 \\ -3 & -6 & 0 \end{pmatrix} \\
+2B + 3C &= \begin{pmatrix} 5 & 3 & 6 \\ 5 & -4 & 4 \end{pmatrix}
+\end{align*}
+
+Therefore, $A(2B + 3C)$:
+\begin{align*}
+A(2B + 3C) &= \begin{pmatrix} 1 & 3 \\ 2 & -1 \end{pmatrix} \begin{pmatrix} 5 & 3 & 6 \\ 5 & -4 & 4 \end{pmatrix} \\
+&= \begin{pmatrix} 20 & -9 & 18 \\ 5 & 10 & 8 \end{pmatrix}
+\end{align*}
+
+\item[2.] $AB$:
+\begin{align*}
+AB &= \begin{pmatrix} 1 & 3 \\ 2 & -1 \end{pmatrix} \begin{pmatrix} 1 & 0 & -3 \\ 4 & 1 & 2 \end{pmatrix} \\
+&= \begin{pmatrix} 13 & 3 & 3 \\ -2 & -1 & -8 \end{pmatrix}
+\end{align*}
+
+Therefore, $(AB)D$:
+\begin{align*}
+(AB)D &= \begin{pmatrix} 13 & 3 & 3 \\ -2 & -1 & -8 \end{pmatrix} \begin{pmatrix} 2 \\ -2 \\ 3 \end{pmatrix} \\
+&= \begin{pmatrix} 29 \\ -26 \end{pmatrix}
+\end{align*}
+
+\item[3.] $BD$:
+\begin{align*}
+BD &= \begin{pmatrix} 1 & 0 & -3 \\ 4 & 1 & 2 \end{pmatrix} \begin{pmatrix} 2 \\ -2 \\ 3 \end{pmatrix} \\
+&= \begin{pmatrix} -7 \\ 12 \end{pmatrix}
+\end{align*}
+
+Therefore, $A(BD)$:
+\begin{align*}
+A(BD) &= \begin{pmatrix} 1 & 3 \\ 2 & -1 \end{pmatrix} \begin{pmatrix} -7 \\ 12 \end{pmatrix} \\
+&= \begin{pmatrix} 29 \\ -26 \end{pmatrix}
+\end{align*}
+\end{enumerate}
+
+\item[(b)]
+
+\begin{enumerate}
+\item[1.] $A^t$:
+\begin{align*}
+A^t = \begin{pmatrix} 2 & -3 & 4 \\ 5 & 1 & 2 \end{pmatrix}
+\end{align*}
+
+\item[2.] $A^tB$:
+\begin{align*}
+A^tB &= \begin{pmatrix} 2 & -3 & 4 \\ 5 & 1 & 2 \end{pmatrix} \begin{pmatrix} 3 & -2 & 0 \\ 1 & -1 & 4 \\ 5 & 5 & 3 \end{pmatrix} \\
+&= \begin{pmatrix} 23 & 19 & 0 \\ 26 & -1 & 10 \end{pmatrix}
+\end{align*}
+
+\item[3.] $C^t$:
+\begin{align*}
+C^t = \begin{pmatrix} 4 \\ 0 \\ 3 \end{pmatrix}
+\end{align*}
+
+Therefore, $BC^t$:
+\begin{align*}
+BC^t &= \begin{pmatrix} 3 & -2 & 0 \\ 1 & -1 & 4 \\ 5 & 5 & 3 \end{pmatrix} \begin{pmatrix} 4 \\ 0 \\ 3 \end{pmatrix} \\
+&= \begin{pmatrix} 12 \\ 16 \\ 29 \end{pmatrix}
+\end{align*}
+
+\item[4.] $CB$:
+\begin{align*}
+CB &= \begin{pmatrix} 4 & 0 & 3 \end{pmatrix} \begin{pmatrix} 3 & -2 & 0 \\ 1 & -1 & 4 \\ 5 & 5 & 3 \end{pmatrix} \\
+&= \begin{pmatrix} 27 & 7 & 9 \end{pmatrix}
+\end{align*}
+
+\item[5.] $CA$:
+\begin{align*}
+CA &= \begin{pmatrix} 4 & 0 & 3 \end{pmatrix} \begin{pmatrix} 2 & 5 \\ -3 & 1 \\ 4 & 2 \end{pmatrix} \\
+&= \begin{pmatrix} 20 & 26 \end{pmatrix}
+\end{align*}
+\end{enumerate}
+\end{enumerate}
 
 \newpage
 
