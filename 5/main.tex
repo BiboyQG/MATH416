@@ -324,7 +324,55 @@ Since both products equal the identity matrix $I$, we have proven that $(A^t)^{-
 
 \textbf{Solution: } \\
 
+\begin{enumerate}
+\item[(a)]
 
+Since $AB$ is invertible, there exists a matrix $C$ such that $(AB)C = I$.
+
+Define $D = BC$. Then:
+\begin{align*}
+AD &= A(BC) \\
+&= (AB)C \\
+&= I
+\end{align*}
+
+which shows that $A$ has an inverse $D$. Therefore, $A$ is invertible.
+
+Similarly, define $E = CA$. Then:
+\begin{align*}
+EB &= (CA)B \\
+&= C(AB) \\
+&= I
+\end{align*}
+
+which shows that $B$ has an inverse $E$. Therefore, $B$ is invertible.
+
+Thus, both $A$ and $B$ are invertible.
+
+\item[(b)]
+
+Let $A = \begin{pmatrix} 1 & 0 & 2 \\ 0 & 1 & 1 \end{pmatrix}$ and $B = \begin{pmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{pmatrix}$
+
+Both $A$ and $B$ are not invertible (as they are not square matrices), but their product is:
+\begin{align*}
+AB &= \begin{pmatrix} 1 & 0 & 2 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{pmatrix} \\
+&= \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+\end{align*}
+
+The product $AB$ is the $2 \times 2$ identity matrix, which is invertible.
+
+\item[(c)]
+
+Suppose, for contradiction, that $A$ is invertible. Then, multiplying both sides of $AB = 0$ by $A^{-1}$ on the left:
+\begin{align*}
+A^{-1}(AB) &= A^{-1}0 \\
+(A^{-1}A)B &= 0 \\
+IB &= 0 \\
+B &= 0
+\end{align*}
+
+But this contradicts our assumption that $B$ is nonzero. Therefore, if $A$ and $B$ are nonzero $n \times n$ matrices with $AB = 0$, then $A$ cannot be invertible.
+\end{enumerate}
 
 \newpage
 
