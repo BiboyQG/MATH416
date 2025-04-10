@@ -26,7 +26,34 @@ Let $M$ be a square matrix of the form $\begin{pmatrix} A & B \\ 0 & I_n \end{pm
 
 \textbf{Solution:} \\
 
+Base Case: $n = 1$
 
+For $n = 1$, we have:
+$$M_1 = \begin{pmatrix} A & B_1 \\ 0 & 1 \end{pmatrix}$$
+
+By theorem of upper triangular matrices, we have:
+$$\det(M_1) = \det(A) \cdot \det(1) = \det(A) \cdot 1 = \det(A)$$
+
+Inductive Step:
+
+Assume that for some $n = m$, we have:
+$$\det(M_m) = \det\begin{pmatrix} A & B_m \\ 0 & I_m \end{pmatrix} = \det(A)$$
+
+For $n = m+1$, split $B_{m+1}$ as $[B_m \; b_{m+1}]$. Similarly, split $I_{m+1}$ as:
+$$I_{m+1} = \begin{pmatrix} I_m & 0 \\ 0 & 1 \end{pmatrix}$$
+
+Therefore, we have:
+$$M_{m+1} = \begin{pmatrix} A & B_m & b_{m+1} \\ 0 & I_m & 0 \\ 0 & 0 & 1 \end{pmatrix}$$
+
+Using cofactor expansion along the last row:
+\begin{align*}
+\det(M_{m+1}) &= (-1)^{(k+m+1)+(k+m+1)} \cdot 1 \cdot \det(\tilde{M}_{m+1, m+1}) \\
+&= \det(\tilde{M}_{m+1, m+1}) \\
+&= \det\begin{pmatrix} A & B_m \\ 0 & I_m \end{pmatrix} \\
+&= \det(A)
+\end{align*}
+
+Therefore, by the principle of mathematical induction, for any $n \geq 1$, the determinant of $M = \begin{pmatrix} A & B \\ 0 & I_n \end{pmatrix}$ equals $\det(A)$.
 
 \newpage
 
