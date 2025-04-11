@@ -393,8 +393,26 @@ Suppose $T : V \rightarrow V$ is a linear operator on a finite-dimensional vecto
 
 \textbf{Solution:} \\
 
+Prove by induction. \\
 
+Base case ($m = 1$): We have $T^1(v) = T(v) = \lambda v = \lambda^1 v$, so the statement holds. \\
 
-\newpage
+Inductive step: Assume that for some positive integer $k$, $v$ is an eigenvector of $T^k$ with eigenvalue $\lambda^k$, meaning:
+\begin{align*}
+T^k(v) = \lambda^k v
+\end{align*}
+
+For $T^{k+1}(v)$:
+\begin{align*}
+T^{k+1}(v) &= T(T^k(v))\\
+&= T(\lambda^k v)\\
+&= \lambda^k T(v)\\
+&= \lambda^k (\lambda v)\\
+&= \lambda^{k+1} v
+\end{align*}
+
+Therefore, $v$ is an eigenvector of $T^{k+1}$ with eigenvalue $\lambda^{k+1}$. \\
+
+By the principle of mathematical induction, $v$ is an eigenvector of $T^m$ with eigenvalue $\lambda^m$ for all positive integers $m$.
 
 \end{document}
