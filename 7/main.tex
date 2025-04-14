@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+
+\DeclareMathOperator{\R}{\mathbb R}
+
+\pagestyle{fancy}
+\fancyhead[L]{Banghao Chi}
+\fancyhead[C]{Homework 7}
+\fancyhead[R]{14th Apr}
+
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\begin{document}
+
+\section*{Exercise 1}
+Answer the following questions.
+
+\begin{itemize}
+    \item[(a)] Check if $A = \begin{pmatrix} 0 & 0 & 1 \\ 1 & 0 & -1 \\ 0 & 1 & 1 \end{pmatrix}$ is diagonalizable. If yes, find an invertible matrix $Q$ and a diagonal matrix $D$ such that $Q^{-1}AQ = D$.
+    \item[(b)] Do the same as (a) for $A = \begin{pmatrix} 3 & 1 & 1 \\ 2 & 4 & 2 \\ -1 & -1 & 1 \end{pmatrix}$.
+    \item[(c)] Check if the linear operator $T$ on $\mathcal{P}_3(\mathbb{R})$ given by $T(f(x)) = f'(x) + f''(x)$ is diagonalizable. If yes, find a basis $\gamma$ such that $[T]_{\gamma}$ is a diagonal matrix.
+    \item[(d)] Do the same as (c) for $T(f(x)) = f(0) + f(1)(x + x^2)$ on $\mathcal{P}_2(\mathbb{R})$.
+\end{itemize}
+
+\textbf{Solution:} \\
+
+
+
+\newpage
+
+\section*{Exercise 2}
+For $A = \begin{pmatrix} 1 & 4 \\ 2 & 3 \end{pmatrix}$, find an expression for $A^n$, where $n$ is an arbitrary positive integer. \\
+
+\textbf{Solution:} \\
+
+
+
+\newpage
+
+\section*{Exercise 3}
+If A is a square matrix prove that $A$ and $A^t$ have the same eigenvalues. Do they have the same eigenvectors? Either prove they do, or give a counterexample. \\
+
+\textbf{Solution:} \\
+
+
+
+\newpage
+
+\section*{Exercise 4}
+Prove that if a 1-dimensional subspace $W$ of $\mathbb{R}^n$ contains a nonzero vector with all nonnegative entries, then $W$ contains a unique probability vector. \\
+
+\textbf{Solution:} \\
+
+
+
+\newpage
+
+\section*{Exercise 5}
+A hospital trauma unit has determined that 30\% of its patients are ambulatory and 70\% are bedridden at the time of arrival at the hospital. A month after arrival, 60\% of the ambulatory patients have recovered, 20\% remain ambulatory, and 20\% have become bedridden. After the same amount of time, 10\% of the bedridden patients have recovered, 20\% have become ambulatory, 50\% remain bedridden, and 20\% have died. Determine the percentages of patients who have recovered, are ambulatory, are bedridden, and have died 1 month after arrival. Also determine the eventual percentages of patients of each type. \\
+
+\textbf{Solution:} \\
+
+
+
+\newpage
+
+\section*{Exercise 6}
+A player begins a game of chance by placing a marker in box 2, marked Start. A die is rolled, and the marker is moved one square to the left if a 1 or a 2 is rolled and one square to the right if a 3, 4, 5, or 6 is rolled. This process continues until the marker lands in square 1, in which case the player wins the game, or in square 4, in which case the player loses the game. What is the probability of winning this game?
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Win & Start & & Lose \\
+1 & 2 & 3 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+
+Hint: Instead of diagonalizing the appropriate transition matrix $A$, it is easier to represent $e_2$ as a linear combination of eigenvectors of $A$ and then apply $A^n$ to the result. \\
+
+\textbf{Solution:} \\
+
+
+
+\end{document}
