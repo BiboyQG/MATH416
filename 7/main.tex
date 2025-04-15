@@ -245,8 +245,48 @@ If A is a square matrix prove that $A$ and $A^t$ have the same eigenvalues. Do t
 
 \textbf{Solution:} \\
 
+\begin{itemize}
+    \item[(a)] $A$ and $A^T$ have the same eigenvalues.
 
+    For a matrix $A$, the characteristic polynomial is:
+\begin{align*}
+\det(A^T - \lambda I) &= \det((A^T - \lambda I)^T) \\
+&= \det(A - \lambda I^T) \\
+&= \det(A - \lambda I)
+\end{align*}
 
+Since the characteristic polynomials are identical, $A$ and $A^T$ have the same eigenvalues.
+
+    \item[(b)] $A$ and $A^T$ do not have the same eigenvectors.
+
+    Counterexample:
+
+Let $A = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}$. So $A^T = \begin{pmatrix} 1 & 0 \\ 1 & 2 \end{pmatrix}$.
+
+The characteristic polynomial for both is $(1-\lambda)(2-\lambda) = 0$, giving eigenvalues $\lambda = 1$ and $\lambda = 2$.
+
+For $A$ with $\lambda = 1$, we have:
+\begin{align*}
+(A-I)v &= \begin{pmatrix} 0 & 1 \\ 0 & 1 \end{pmatrix}\begin{pmatrix} v_1 \\ v_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}
+\end{align*}
+
+This gives $v = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$.
+
+For $A^T$ with $\lambda = 1$, we have:
+\begin{align*}
+(A^T-I)w &= \begin{pmatrix} 0 & 0 \\ 1 & 1 \end{pmatrix}\begin{pmatrix} w_1 \\ w_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}
+\end{align*}
+
+This gives $w = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$.
+
+Similarly, for $\lambda = 2$:
+\begin{itemize}
+    \item $A$ has eigenvector $\begin{pmatrix} 1 \\ 1 \end{pmatrix}$
+    \item $A^T$ has eigenvector $\begin{pmatrix} 0 \\ 1 \end{pmatrix}$
+\end{itemize}
+
+Therefore, while $A$ and $A^T$ always have the same eigenvalues, they generally have different eigenvectors.
+\end{itemize}
 \newpage
 
 \section*{Exercise 4}
