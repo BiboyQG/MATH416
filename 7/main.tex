@@ -32,7 +32,167 @@ Answer the following questions.
 
 \textbf{Solution:} \\
 
+\begin{itemize}
+    \item[(a)]
+    The characteristic polynomial of \(A\) is:
+\[
+\det(A - \lambda I)
+= \det\!
+\begin{pmatrix}
+-\lambda & 0 & 1\\
+1 & -\lambda & -1\\
+0 & 1 & 1-\lambda
+\end{pmatrix} = (\lambda - 1)\,\bigl(\lambda^2 + 1\bigr)
+\]
+Hence the eigenvalues are
+\[
+\lambda = 1,\quad \lambda = i,\quad \lambda = -i.
+\]
+\[
+A - I = 
+\begin{pmatrix}
+-1 & 0 & 1\\
+1 & -1 & -1\\
+0 & 1 & 0
+\end{pmatrix},
+\quad
+A - iI =
+\begin{pmatrix}
+-\,i & 0 & 1\\
+1 & -\,i & -1\\
+0 & 1 & 1 - i
+\end{pmatrix},
+\quad
+A + iI =
+\begin{pmatrix}
+\,i & 0 & 1\\
+1 & \,i & -1\\
+0 & 1 & 1 + i
+\end{pmatrix}.
+\]
 
+1) For \(\lambda = 1\), we solve \((A - I)v = 0\). 
+\[
+\begin{pmatrix}
+-1 & 0 & 1\\
+1 & -1 & -1\\
+0 & 1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+x \\ y \\ z
+\end{pmatrix}
+= 
+\begin{pmatrix}
+0 \\ 0 \\ 0
+\end{pmatrix}.
+\]
+We get $v_1 = \begin{pmatrix}1 \\ 0 \\ 1\end{pmatrix}.$
+
+2) For \(\lambda = i\), we solve \((A - iI)v = 0\).
+\[
+\begin{pmatrix}
+-i & 0 & 1\\
+1 & -i & -1\\
+0 & 1 & 1-i
+\end{pmatrix}
+\begin{pmatrix}
+x \\ y \\ z
+\end{pmatrix}
+= 
+\begin{pmatrix}
+0 \\ 0 \\ 0
+\end{pmatrix}.
+\]
+We get $v_2 = \begin{pmatrix}-i \\ -1+i \\ 1\end{pmatrix}$.
+
+3) For \(\lambda = -i\), we solve \((A + iI)v = 0\).
+\[
+\begin{pmatrix}
+i & 0 & 1\\
+1 & i & -1\\
+0 & 1 & 1+i
+\end{pmatrix}
+\begin{pmatrix}
+x \\ y \\ z
+\end{pmatrix}
+= 
+\begin{pmatrix}
+0 \\ 0 \\ 0
+\end{pmatrix}.
+\]
+
+We get $v_3 = \begin{pmatrix}i \\ -1-i \\ 1\end{pmatrix}$.
+
+Therefore, $Q = \begin{pmatrix}1 & -i & i \\ 0 & -1+i & -1-i \\ 1 & 1 & 1\end{pmatrix}$ and $D = \begin{pmatrix}1 & 0 & 0 \\ 0 & i & 0 \\ 0 & 0 & -i\end{pmatrix}$. A is diagonalizable over complex numbers, with eigenvalues $1, i, -i$.
+
+    \item[(b)]
+    The characteristic polynomial of
+\[
+\lambda^3 - 8\lambda^2 + 20\lambda - 16,
+\]
+which factors as
+\[
+(\lambda - 2)^2 (\lambda - 4).
+\]
+Therefore the eigenvalues are \(2\) (with algebraic multiplicity \(2\)) and \(4\).
+
+For \(\lambda = 2\), a basis of the eigenspace is:
+\[
+v_1 = \begin{pmatrix} -1 \\[6pt] 1 \\[6pt] 0 \end{pmatrix},
+\quad
+v_2 = \begin{pmatrix} -1 \\[6pt] 0 \\[6pt] 1 \end{pmatrix}.
+\]
+For \(\lambda = 4\), an eigenvector is
+\[
+v_3 = \begin{pmatrix} -1 \\[6pt] -2 \\[6pt] 1 \end{pmatrix}.
+\]
+
+Therefore:
+\[
+P
+=
+\begin{pmatrix}
+-1 & -1 & -1 \\
+\;\,1 & \;\,0 & -2 \\
+\;\,0 & \;\,1 & \;\,1
+\end{pmatrix}.
+\]
+And:
+\[
+D
+=
+\mathrm{diag}(2,\,2,\,4).
+\]
+
+Thus the matrix \(A\) is diagonalizable (over the real numbers) with eigenvalues \(2, 2, 4\).
+    
+    \item[(c)]
+    For the standard basis \(\{1, x, x^2, x^3\}\), we have:
+    \[
+    T(1) = 0,\quad
+    T(x) = 1,\quad
+    T(x^2) = 2 + 2x,\quad
+    T(x^3) = 3x^2 + 6x.
+    \]
+    Resulting in a strictly upper triangular matrix. The only eigenvalue is 0, and its eigenspace has dimension 1. Since the space has dimension 4, we cannot find 4 linearly independent eigenvectors. Therefore \(T\) is not diagonalizable.
+    
+    \item[(d)]
+    For the standard basis \(\{1, x, x^2\}\):
+    \[
+    T(1) = 1 + x + x^2,\quad
+    T(x) = x + x^2,\quad
+    T(x^2) = x + x^2.
+    \]
+    The corresponding matrix is
+    \[
+    \begin{pmatrix}
+    1 & 0 & 0\\
+    1 & 1 & 1\\
+    1 & 1 & 1
+    \end{pmatrix}.
+    \]
+    The characteristic polynomial is \((\lambda - 0)(\lambda - 1)(\lambda - 2)\), giving distinct eigenvalues \(0, 1, 2\). Hence \(T\) is diagonalizable. $v_1 = \begin{pmatrix}0 \\ -1 \\ 1\end{pmatrix}, v_2 = \begin{pmatrix}-1 \\ 1 \\ 1\end{pmatrix}, v_3 = \begin{pmatrix}0 \\ 1 \\ 1\end{pmatrix}$ are eigenvectors for eigenvalues 0, 1, 2 respectively. Therefore, the basis $\gamma = \{v_1, v_2, v_3\}$ diagonalizes $T$.
+    \end{itemize}
 
 \newpage
 
