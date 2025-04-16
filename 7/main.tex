@@ -294,7 +294,31 @@ Prove that if a 1-dimensional subspace $W$ of $\mathbb{R}^n$ contains a nonzero 
 
 \textbf{Solution:} \\
 
+Since $W$ is 1-dimensional, every vector in $W$ is a scalar multiple of any nonzero vector in $W$. As $w$ is a nonzero vector in $W$, every vector in $W$ is of the form $\alpha w$ for some scalar $\alpha$. \\
 
+Let $S(w) = \sum_{i=1}^n w_i$ be the sum of all entries in $w$. Since $w$ has all nonnegative entries and is nonzero, $S(w) > 0$. \\
+
+Let $p = \frac{w}{S(w)}$. Since $w$ has all nonnegative entries, so does $p$. Moreover,
+\begin{align*}
+\sum_{i=1}^n p_i &= \sum_{i=1}^n \frac{w_i}{S(w)} \\
+&= \frac{1}{S(w)} \sum_{i=1}^n w_i \\
+&= \frac{S(w)}{S(w)} \\
+&= 1
+\end{align*}
+
+Therefore, $p$ is a probability vector in $W$. \\
+
+For uniqueness, suppose $q$ is another probability vector in $W$. Since $q \in W$, we have $q = \alpha w$ for some scalar $\alpha$. \\
+
+Since $q$ is a probability vector, $\sum_{i=1}^n q_i = 1$, we have:
+\begin{align*}
+\sum_{i=1}^n q_i &= 1 \\
+\sum_{i=1}^n \alpha w_i &= 1 \\
+\alpha \sum_{i=1}^n w_i &= 1 \\
+\alpha S(w) &= 1
+\end{align*}
+
+Solving for $\alpha$, we get $\alpha = \frac{1}{S(w)}$. Thus, $q = \frac{1}{S(w)} w = p$, proving that $p$ is the unique probability vector in $W$.
 
 \newpage
 
@@ -303,7 +327,124 @@ A hospital trauma unit has determined that 30\% of its patients are ambulatory a
 
 \textbf{Solution:} \\
 
+Define the states:
+R: Recovered
+A: Ambulatory
+B: Bedridden
+D: Dead
 
+The initial distribution of patients is:
+\begin{align*}
+\pi^{(0)} = [0, 0.3, 0.7, 0]
+\end{align*}
+
+Now, let's construct the transition matrix P based on the given information:
+\begin{align*}
+P = \begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0.6 & 0.2 & 0.2 & 0 \\
+0.1 & 0.2 & 0.5 & 0.2 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+\end{align*}
+
+To find the distribution after 1 month, we calculate:
+\begin{align*}
+\pi^{(1)} &= \pi^{(0)} \cdot P \\
+&= [0, 0.3, 0.7, 0] \cdot P
+\end{align*}
+
+Computing each component:
+\begin{align*}
+\pi^{(1)}_R &= 0 \cdot 1 + 0.3 \cdot 0.6 + 0.7 \cdot 0.1 + 0 \cdot 0 = 0.18 + 0.07 = 0.25 \\
+\pi^{(1)}_A &= 0 \cdot 0 + 0.3 \cdot 0.2 + 0.7 \cdot 0.2 + 0 \cdot 0 = 0.06 + 0.14 = 0.20 \\
+\pi^{(1)}_B &= 0 \cdot 0 + 0.3 \cdot 0.2 + 0.7 \cdot 0.5 + 0 \cdot 0 = 0.06 + 0.35 = 0.41 \\
+\pi^{(1)}_D &= 0 \cdot 0 + 0.3 \cdot 0 + 0.7 \cdot 0.2 + 0 \cdot 1 = 0 + 0.14 = 0.14
+\end{align*}
+
+Therefore, after 1 month:
+\begin{itemize}
+    \item 25\% of patients have recovered
+    \item 20\% are ambulatory
+    \item 41\% are bedridden
+    \item 14\% have died
+\end{itemize}
+
+For the eventual percentages, we need to analyze the long-term behavior. Since R and D are absorbing states (once entered, patients never leave), we need to find the absorption probabilities.
+
+Let's rearrange our transition matrix to group absorbing states first:
+\begin{align*}
+P = \begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0.6 & 0 & 0.2 & 0.2 \\
+0.1 & 0.2 & 0.2 & 0.5
+\end{pmatrix}
+\end{align*}
+
+We extract the submatrix Q for transitions between non-absorbing states:
+\begin{align*}
+Q = \begin{pmatrix}
+0.2 & 0.2 \\
+0.2 & 0.5
+\end{pmatrix}
+\end{align*}
+
+The fundamental matrix $N = (I-Q)^{-1}$:
+\begin{align*}
+I-Q &= \begin{pmatrix}
+0.8 & -0.2 \\
+-0.2 & 0.5
+\end{pmatrix} \\
+(I-Q)^{-1} &= \frac{1}{0.8 \cdot 0.5 - (-0.2) \cdot (-0.2)} \begin{pmatrix}
+0.5 & 0.2 \\
+0.2 & 0.8
+\end{pmatrix} \\
+&= \frac{1}{0.36} \begin{pmatrix}
+0.5 & 0.2 \\
+0.2 & 0.8
+\end{pmatrix} \\
+&= \begin{pmatrix}
+1.3889 & 0.5556 \\
+0.5556 & 2.2222
+\end{pmatrix}
+\end{align*}
+
+The absorption probabilities matrix B = N·R:
+\begin{align*}
+R &= \begin{pmatrix}
+0.6 & 0 \\
+0.1 & 0.2
+\end{pmatrix} \\
+B &= \begin{pmatrix}
+1.3889 & 0.5556 \\
+0.5556 & 2.2222
+\end{pmatrix} \cdot \begin{pmatrix}
+0.6 & 0 \\
+0.1 & 0.2
+\end{pmatrix} \\
+&= \begin{pmatrix}
+0.8889 & 0.1111 \\
+0.5556 & 0.4444
+\end{pmatrix}
+\end{align*}
+
+This means:
+- A patient who starts in state A has probability 0.8889 of eventual recovery and 0.1111 of eventual death
+- A patient who starts in state B has probability 0.5556 of eventual recovery and 0.4444 of eventual death
+
+Given our initial distribution (30\% ambulatory, 70\% bedridden), the eventual percentages are:
+\begin{align*}
+\text{Recovered} &= 0.3 \cdot 0.8889 + 0.7 \cdot 0.5556 = 0.2667 + 0.3889 = 0.6556 \approx 65.56\% \\
+\text{Dead} &= 0.3 \cdot 0.1111 + 0.7 \cdot 0.4444 = 0.0333 + 0.3111 = 0.3444 \approx 34.44\% \\
+\text{Ambulatory} &= 0\% \\
+\text{Bedridden} &= 0\%
+\end{align*}
+
+Therefore, eventually:
+- 65.56\% of patients will recover
+- 34.44\% will die
+- 0\% will remain ambulatory or bedridden (as all patients eventually either recover or die)
 
 \newpage
 
