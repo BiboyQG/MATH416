@@ -333,118 +333,151 @@ A: Ambulatory
 B: Bedridden
 D: Dead
 
-The initial distribution of patients is:
+Therefore, we have the following transition matrix $T$:
 \begin{align*}
-\pi^{(0)} = [0, 0.3, 0.7, 0]
+T = 
+\begin{bmatrix}
+1.0 & 0.6 & 0.1 & 0.0 \\
+0.0 & 0.2 & 0.2 & 0.0 \\
+0.0 & 0.2 & 0.5 & 0.0 \\
+0.0 & 0.0 & 0.2 & 1.0
+\end{bmatrix}
 \end{align*}
 
-Now, let's construct the transition matrix P based on the given information:
+The initial distribution is:
 \begin{align*}
-P = \begin{pmatrix}
-1 & 0 & 0 & 0 \\
-0.6 & 0.2 & 0.2 & 0 \\
-0.1 & 0.2 & 0.5 & 0.2 \\
-0 & 0 & 0 & 1
-\end{pmatrix}
+P_0 = 
+\begin{bmatrix}
+0 \\
+0.3 \\
+0.7 \\
+0
+\end{bmatrix}
 \end{align*}
 
-To find the distribution after 1 month, we calculate:
+Let's calculate the distribution after one month:
 \begin{align*}
-\pi^{(1)} &= \pi^{(0)} \cdot P \\
-&= [0, 0.3, 0.7, 0] \cdot P
+P_1 &= T \cdot P_0\\
+&= 
+\begin{bmatrix}
+1.0 & 0.6 & 0.1 & 0.0 \\
+0.0 & 0.2 & 0.2 & 0.0 \\
+0.0 & 0.2 & 0.5 & 0.0 \\
+0.0 & 0.0 & 0.2 & 1.0
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+0.3 \\
+0.7 \\
+0
+\end{bmatrix}\\
+&= 
+\begin{bmatrix}
+0.25 \\
+0.20 \\
+0.41 \\
+0.14
+\end{bmatrix}
 \end{align*}
 
-Computing each component:
-\begin{align*}
-\pi^{(1)}_R &= 0 \cdot 1 + 0.3 \cdot 0.6 + 0.7 \cdot 0.1 + 0 \cdot 0 = 0.18 + 0.07 = 0.25 \\
-\pi^{(1)}_A &= 0 \cdot 0 + 0.3 \cdot 0.2 + 0.7 \cdot 0.2 + 0 \cdot 0 = 0.06 + 0.14 = 0.20 \\
-\pi^{(1)}_B &= 0 \cdot 0 + 0.3 \cdot 0.2 + 0.7 \cdot 0.5 + 0 \cdot 0 = 0.06 + 0.35 = 0.41 \\
-\pi^{(1)}_D &= 0 \cdot 0 + 0.3 \cdot 0 + 0.7 \cdot 0.2 + 0 \cdot 1 = 0 + 0.14 = 0.14
-\end{align*}
-
-Therefore, after 1 month:
+Therefore, after one month:
 \begin{itemize}
-    \item 25\% of patients have recovered
+    \item 25\% have recovered
     \item 20\% are ambulatory
     \item 41\% are bedridden
     \item 14\% have died
 \end{itemize}
-
-For the eventual percentages, we need to analyze the long-term behavior. Since R and D are absorbing states (once entered, patients never leave), we need to find the absorption probabilities.
-
-Let's rearrange our transition matrix to group absorbing states first:
 \begin{align*}
-P = \begin{pmatrix}
+\text{det}
+\begin{bmatrix}
+1-\lambda & 0.6 & 0.1 & 0 \\
+0 & 0.2-\lambda & 0.2 & 0 \\
+0 & 0.2 & 0.5-\lambda & 0 \\
+0 & 0 & 0.2 & 1-\lambda
+\end{bmatrix} = 0
+\end{align*}
+
+This gives us: $(1-\lambda)^2 \cdot (0.1-\lambda) \cdot (0.6-\lambda) = 0$
+
+To find the corresponding eigenvectors:
+\begin{itemize}
+    \item For $\lambda = 1$: $v_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}$ and $v_2 = \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}$
+    \item For $\lambda = 0.1$: $v_3 = \begin{bmatrix} 0.544 \\ -0.89 \\ 0.445 \\ -0.1 \end{bmatrix}$
+    \item For $\lambda = 0.6$: $v_4 = \begin{bmatrix} 0.817 \\ -0.41\\ -0.817 \\ 0.41 \end{bmatrix}$
+\end{itemize}
+
+Therefore, we can form the matrices $P$ and $D$:
+\begin{align*}
+P &= 
+\begin{bmatrix}
+1 & 0 & 0.544 & 0.817 \\
+0 & 0 & -0.89 & -0.41 \\
+0 & 0 & 0.445 & -0.817 \\
+0 & 1 & -0.1 & 0.41
+\end{bmatrix} \\
+D &= 
+\begin{bmatrix}
 1 & 0 & 0 & 0 \\
 0 & 1 & 0 & 0 \\
-0.6 & 0 & 0.2 & 0.2 \\
-0.1 & 0.2 & 0.2 & 0.5
-\end{pmatrix}
+0 & 0 & 0.1 & 0 \\
+0 & 0 & 0 & 0.6
+\end{bmatrix}
 \end{align*}
 
-We extract the submatrix Q for transitions between non-absorbing states:
+As $n$ approaches infinity, $D^n$ becomes:
 \begin{align*}
-Q = \begin{pmatrix}
-0.2 & 0.2 \\
-0.2 & 0.5
-\end{pmatrix}
+D^n \to
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{bmatrix}
 \end{align*}
 
-The fundamental matrix $N = (I-Q)^{-1}$:
+Computing $T^n = PD^nP^{-1}$ as $n \to \infty$, we get:
 \begin{align*}
-I-Q &= \begin{pmatrix}
-0.8 & -0.2 \\
--0.2 & 0.5
-\end{pmatrix} \\
-(I-Q)^{-1} &= \frac{1}{0.8 \cdot 0.5 - (-0.2) \cdot (-0.2)} \begin{pmatrix}
-0.5 & 0.2 \\
-0.2 & 0.8
-\end{pmatrix} \\
-&= \frac{1}{0.36} \begin{pmatrix}
-0.5 & 0.2 \\
-0.2 & 0.8
-\end{pmatrix} \\
-&= \begin{pmatrix}
-1.3889 & 0.5556 \\
-0.5556 & 2.2222
-\end{pmatrix}
+T^\infty \approx 
+\begin{bmatrix}
+1 & 0.89 & 0.554 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0.11 & 0.446 & 1
+\end{bmatrix}
 \end{align*}
 
-The absorption probabilities matrix B = N·R:
+Therefore:
 \begin{align*}
-R &= \begin{pmatrix}
-0.6 & 0 \\
-0.1 & 0.2
-\end{pmatrix} \\
-B &= \begin{pmatrix}
-1.3889 & 0.5556 \\
-0.5556 & 2.2222
-\end{pmatrix} \cdot \begin{pmatrix}
-0.6 & 0 \\
-0.1 & 0.2
-\end{pmatrix} \\
-&= \begin{pmatrix}
-0.8889 & 0.1111 \\
-0.5556 & 0.4444
-\end{pmatrix}
+P_\infty &= T^\infty \cdot P_0 \\
+&= 
+\begin{bmatrix}
+1 & 0.89 & 0.554 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0.11 & 0.446 & 1
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+0.3 \\
+0.7 \\
+0
+\end{bmatrix} \\
+&= 
+\begin{bmatrix}
+0.654 \\
+0 \\
+0 \\
+0.346
+\end{bmatrix}
 \end{align*}
 
-This means:
-- A patient who starts in state A has probability 0.8889 of eventual recovery and 0.1111 of eventual death
-- A patient who starts in state B has probability 0.5556 of eventual recovery and 0.4444 of eventual death
-
-Given our initial distribution (30\% ambulatory, 70\% bedridden), the eventual percentages are:
-\begin{align*}
-\text{Recovered} &= 0.3 \cdot 0.8889 + 0.7 \cdot 0.5556 = 0.2667 + 0.3889 = 0.6556 \approx 65.56\% \\
-\text{Dead} &= 0.3 \cdot 0.1111 + 0.7 \cdot 0.4444 = 0.0333 + 0.3111 = 0.3444 \approx 34.44\% \\
-\text{Ambulatory} &= 0\% \\
-\text{Bedridden} &= 0\%
-\end{align*}
-
-Therefore, eventually:
-- 65.56\% of patients will recover
-- 34.44\% will die
-- 0\% will remain ambulatory or bedridden (as all patients eventually either recover or die)
+Therefore, the eventual percentages are:
+\begin{itemize}
+    \item 65.4\% Recovered
+    \item 0\% Ambulatory
+    \item 0\% Bedridden
+    \item 34.6\% Dead
+\end{itemize}
 
 \newpage
 
